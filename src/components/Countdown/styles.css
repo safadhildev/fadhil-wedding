@@ -1,0 +1,49 @@
+/* COUNTDOWN */
+.home-section-countdown-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #fff;
+  color: #000;
+  padding: 50px 20px;
+  overflow: hidden;
+  border-top: 1px solid #d9ac53;
+}
+
+.home-section-countdown-wrapper {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  margin: 15px 0;
+}
+
+.home-countdown-colon {
+  margin: 0 10px;
+}
+
+.home-countdown-item {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.home-countdown-item p:nth-child(1) {
+  font-size: 24px;
+  font-weight: 800;
+  font-family: "Overlock", cursive;
+}
+.home-countdown-item p:nth-child(2) {
+  font-size: 12px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 200;
+}
+
+.countdown-border {
+  height: 2px;
+  width: auto;
+  background-color: #d9ac53;
+  margin: 20px 0;
+}

@@ -1,0 +1,7 @@
+export const TABS = {
+  HOME: "HOME",
+  CALENDAR: "CALENDAR",
+  CONTACT: "CONTACT",
+  RSVP: "RSVP",
+  LOCATION: "LOCATION",
+};

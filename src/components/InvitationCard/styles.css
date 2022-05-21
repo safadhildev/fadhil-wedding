@@ -1,0 +1,195 @@
+.home-section1 {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  justify-content: flex-start;
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.inv-bg {
+  position: absolute;
+  z-index: -1;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.inv-flower {
+  position: absolute;
+  top: 30px;
+  left: -30px;
+  width: 250px;
+  height: 250px;
+  z-index: 5;
+}
+.inv-flower img {
+  width: 100%;
+  height: 100%;
+}
+
+.inv-flower-bottom {
+  position: absolute;
+  bottom: 80px;
+  right: -30px;
+  width: 250px;
+  height: 250px;
+  z-index: 5;
+}
+.inv-flower-bottom img {
+  width: 100%;
+  height: 100%;
+  transform: rotate(180deg);
+}
+
+.inv-bg img {
+  width: auto;
+  height: auto;
+  object-fit: cover;
+  opacity: 0.1;
+}
+
+.home-s1-bg {
+  background-image: url("../../assets/pattern.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  z-index: 1;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0.1;
+}
+
+.home-s1-card {
+  margin: 80px 30px;
+  border-radius: 0px;
+  padding: 100px 50px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  border: 2px solid #f0e8a9;
+}
+
+.inv-frame-1 {
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
+.inv-frame-1 div {
+  width: 100%;
+  height: 100%;
+  border: 2px solid #f0e8a9;
+  transform: rotate(5deg);
+}
+
+.inv-frame-2 {
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
+.inv-frame-2 div {
+  width: 100%;
+  height: 100%;
+  transform: rotate(-3deg);
+  border: 2px solid #f0e8a9;
+}
+
+.home-s1-card p {
+  background: -webkit-linear-gradient(#f0e8a9, #f5f0d5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.home-s1-card-info p:nth-child(1) {
+  font-size: 18px;
+  text-align: left;
+  text-align: center;
+  white-space: pre-line;
+  font-family: "Lato", sans-serif;
+  font-weight: lighter;
+}
+
+.home-s1-card-name {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 0;
+}
+
+.home-s1-card-name p:nth-child(1) {
+  font-size: 60px;
+  padding: 0 60px 0 10px;
+  text-align: left;
+  /* font-family: "My Soul", cursive; */
+  /* font-family: "Comforter", cursive; */
+  font-family: "Great Vibes", cursive;
+  /* font-style: italic; */
+  font-weight: bold;
+}
+
+.home-s1-card-name p:nth-child(2) {
+  font-size: 44px;
+  text-align: center;
+  /* font-family: "Comforter", cursive; */
+  font-family: "Great Vibes", cursive;
+}
+
+.home-s1-card-name p:nth-child(3) {
+  font-size: 60px;
+  text-align: right;
+  padding: 0 10px 0 60px;
+  /* font-family: "Comforter", cursive; */
+  font-family: "Great Vibes", cursive;
+  font-weight: bold;
+}
+
+.inv-date-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.inv-date {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.inv-date-day {
+  margin: 100px 0 0 0;
+  padding: 100px 0;
+  background-color: #f0e8a9;
+  font-size: 20px;
+  font-weight: 300;
+  font-family: "Satisfy", cursive;
+}
+
+.inv-date p:nth-child(1),
+.inv-date p:nth-child(3) {
+  border-top: 1px solid #f5f0d5;
+  border-bottom: 1px solid #f5f0d5;
+  margin: 0;
+  padding: 2px 10px 4px;
+  font-size: 14px;
+  font-family: "Roboto Slab", sans-serif;
+  font-weight: 600;
+}
+
+.inv-date p:nth-child(2) {
+  margin: -10px 10px -20px;
+  font-size: 48px;
+  font-weight: bold;
+  font-family: "Satisfy", cursive;
+}
