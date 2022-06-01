@@ -5,18 +5,40 @@ import Footer from "./components/Footer";
 import { useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css"; // You can also use <link> for styles
+import { RSVP } from "./components";
 
 AOS.init();
 
 const App = () => {
   const [activeTab, setActiveTab] = useState(null);
 
+  const [showRSVP, setShowRSVP] = useState(false);
+
+  const onClickTab = (tab) => {
+    setActiveTab(tab);
+    if (tab === "RSVP") {
+      setShowRSVP(true);
+    }
+  };
+
   return (
     <>
       <Routes>
-        <Route path="/" element={<Home section={activeTab} />} />
+        <Route
+          path="/"
+          element={
+            <Home
+              section={activeTab}
+              showRSVP={showRSVP}
+              onCloseRSVP={() => {
+                setShowRSVP(false);
+              }}
+            />
+          }
+        />
       </Routes>
-      <Footer onClick={setActiveTab} />
+
+      <Footer onClick={onClickTab} />
     </>
   );
 };

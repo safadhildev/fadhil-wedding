@@ -10,17 +10,19 @@ import {
   Introduction,
   InvitationCard,
   Tentative,
+  RSVP,
 } from "../../components";
 import { assets } from "../../assets";
+import Guestbook from "../../components/Guestbook";
 
-const Home = ({ section }) => {
+const Home = ({ section, showRSVP, onCloseRSVP }) => {
   const audioRef = useRef(null);
   const [mute, setMute] = useState(false);
 
   const onPlayAudio = () => {
     if (audioRef && audioRef?.current) {
       audioRef?.current.play();
-      audioRef.current.volume = 0.2;
+      audioRef.current.volume = 0.01;
     }
   };
 
@@ -68,7 +70,14 @@ const Home = ({ section }) => {
         <Introduction />
         <Tentative />
         <Countdown />
+        <Guestbook />
         <Contact />
+        <RSVP
+          visible={showRSVP}
+          onClose={() => {
+            onCloseRSVP();
+          }}
+        />
 
         <div tabIndex={4} className="home-footer">
           <div className="home-footer-credit">

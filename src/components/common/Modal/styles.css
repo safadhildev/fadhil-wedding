@@ -1,0 +1,48 @@
+.Modal {
+  position: fixed;
+  bottom: -150vh;
+  /* background-color: #151515; */
+  background-color: #ffffff;
+  flex: 1;
+  width: 100vw;
+  /* width: 475px;*/
+  max-width: 500px;
+  padding: 0 0 40px;
+  /* height: 80%; */
+  box-shadow: 0 0 4px 0px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease-out;
+  z-index: 999;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.Modal.Show {
+  bottom: 0;
+}
+
+.Overlay {
+  background-color: rgba(0, 0, 0, 0.55);
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  position: fixed;
+  display: none;
+  z-index: 5;
+}
+
+.Overlay.Show {
+  display: block;
+}
+
+.modal-title-wrapper {
+  padding: 20px 15px 0;
+}
+
+.modal-title {
+  font-weight: bold;
+  font-family: "Satisfy", cursive;
+  font-size: 20px;
+  text-align: center;
+  color: #000000;
+}

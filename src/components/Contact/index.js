@@ -69,12 +69,11 @@ const Contact = () => {
   return (
     <div
       id={TABS.CONTACT}
-      tabIndex={3}
+      tabIndex={4}
       className="home-section3"
       data-aos="zoom-in"
     >
       <Header text="Hubungi" />
-
       <div className="home-section3-contact-wrapper">
         {contacts.map(renderContact)}
       </div>
