@@ -13,10 +13,12 @@ const Modal = ({
   return (
     <>
       <div className={`Modal ${visible ? "Show" : ""}`}>
-        <div className="modal-title-wrapper">
-          <p className="modal-title">{title}</p>
+        <div className="modal-wrapper">
+          <div className="modal-title-wrapper">
+            <p className="modal-title">{title}</p>
+          </div>
+          <div style={{ flex: 1 }}>{children}</div>
         </div>
-        <div style={{ flex: 1 }}>{children}</div>
       </div>
       <div className={`Overlay ${visible ? "Show" : ""}`} onClick={onClose} />
     </>
