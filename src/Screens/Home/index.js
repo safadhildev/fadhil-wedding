@@ -14,6 +14,7 @@ import {
 } from "../../components";
 import { assets } from "../../assets";
 import Guestbook from "../../components/Guestbook";
+import InvitationCard2 from "../../components/InvitationCard2";
 
 const Home = ({ section, showRSVP, onCloseRSVP }) => {
   const audioRef = useRef(null);
@@ -66,7 +67,7 @@ const Home = ({ section, showRSVP, onCloseRSVP }) => {
           <source src={assets.song.stillLife} type="audio/mpeg" />
         </audio>
 
-        <InvitationCard />
+        <InvitationCard2 />
         <Introduction />
         <Tentative />
         <Countdown />
