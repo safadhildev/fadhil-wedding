@@ -7,14 +7,12 @@ const InvitationCard2 = () => {
   return (
     <div id={TABS.HOME} tabIndex={0} className="ic2-container">
       <div className="ic2-bg" />
-      {/* <div className="inv-bg">
-        <img alt="" src={assets.blackTexture1} />
-      </div> */}
 
       <div className="ic2-frame">
         <div className="ic2-frame-img">
-          <img src={assets.frame1} />
+          <img className="ic2-frame1" src={assets.frame1} alt="" />
         </div>
+
         <div className="ic2-frame-content">
           <div className="ic2-frame-info">
             <p>{`WALIMATUL URUS`}</p>

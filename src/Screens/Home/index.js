@@ -11,12 +11,13 @@ import {
   InvitationCard,
   Tentative,
   RSVP,
+  Calendar,
 } from "../../components";
 import { assets } from "../../assets";
 import Guestbook from "../../components/Guestbook";
 import InvitationCard2 from "../../components/InvitationCard2";
 
-const Home = ({ section, showRSVP, onCloseRSVP }) => {
+const Home = ({ section, showModal, onCloseModal }) => {
   const audioRef = useRef(null);
   const [mute, setMute] = useState(false);
 
@@ -73,11 +74,17 @@ const Home = ({ section, showRSVP, onCloseRSVP }) => {
         <Countdown />
         <Guestbook />
         <Contact />
+        <Calendar
+          visible={showModal?.visible && showModal?.type === TABS.CALENDAR}
+          onClose={onCloseModal}
+        />
         <RSVP
-          visible={showRSVP}
-          onClose={() => {
-            onCloseRSVP();
-          }}
+          visible={showModal?.visible && showModal?.type === TABS.RSVP}
+          onClose={onCloseModal}
+        />
+        <RSVP
+          visible={showModal?.visible && showModal?.type === TABS.RSVP}
+          onClose={onCloseModal}
         />
 
         <div tabIndex={4} className="home-footer">

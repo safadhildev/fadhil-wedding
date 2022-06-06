@@ -4,4 +4,5 @@ export const TABS = {
   CONTACT: "CONTACT",
   RSVP: "RSVP",
   LOCATION: "LOCATION",
+  AUDIO: "AUDIO",
 };

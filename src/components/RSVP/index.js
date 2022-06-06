@@ -12,6 +12,7 @@ const db = getFirestore(app);
 const initialRSVPValues = {
   name: "",
   head_count: 1,
+  mobile: "",
   attend: false,
 };
 const initialAlertValues = {
@@ -28,18 +29,18 @@ const headCountList = [
     value: 2,
     label: "2",
   },
-  {
-    value: 3,
-    label: "3",
-  },
-  {
-    value: 4,
-    label: "4",
-  },
-  {
-    value: 5,
-    label: "5",
-  },
+  // {
+  //   value: 3,
+  //   label: "3",
+  // },
+  // {
+  //   value: 4,
+  //   label: "4",
+  // },
+  // {
+  //   value: 5,
+  //   label: "5",
+  // },
 ];
 
 const attendList = [
@@ -54,6 +55,7 @@ const RSVP = ({ visible, onClose }) => {
   const [alert, setAlert] = useState(initialAlertValues);
 
   const onCloseModal = () => {
+    console.log("[DEBUG] - onCloseModal");
     setFormValues(initialRSVPValues);
     onClose();
   };
@@ -82,7 +84,7 @@ const RSVP = ({ visible, onClose }) => {
   }, [visible]);
 
   useEffect(() => {
-    if (formValues?.name?.length > 0) {
+    if (formValues?.name?.length > 0 && formValues?.mobile?.length > 0) {
       setDisableSubmit(false);
     } else {
       setDisableSubmit(true);
@@ -116,6 +118,22 @@ const RSVP = ({ visible, onClose }) => {
           }}
           onChange={(event) => {
             setFormValues({ ...formValues, name: event.target.value });
+          }}
+        />
+        <TextField
+          label="No. Telefon"
+          variant="outlined"
+          fullWidth
+          color="primary"
+          value={formValues?.mobile}
+          style={{
+            margin: "10px 0",
+            backgroundColor: "#EEEEEE",
+            borderRadius: 5,
+            fontFamily: `Roboto Slab, sans-serif`,
+          }}
+          onChange={(event) => {
+            setFormValues({ ...formValues, mobile: event.target.value });
           }}
         />
         <div
@@ -203,7 +221,7 @@ const RSVP = ({ visible, onClose }) => {
         )}
         <div style={{ margin: "30px 0 0" }}>
           <Button
-            text="Submit"
+            text="Hantar"
             onClick={onSubmitRSVP}
             loading={submitLoading}
             disabled={disableSubmit}

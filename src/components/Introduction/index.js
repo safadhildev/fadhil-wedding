@@ -1,6 +1,10 @@
 import React from "react";
 import "./styles.css";
 
+const texts = {
+  intro1: "السَّلاَمُ عَلَيْكُمْ وَرَحْمَةُ اللهِ وَبَرَكَاتُهُ",
+};
+
 // const sample = `Assalamualaikum w.b.t\n\n\nSYED HASSAN BIN SYED ALI\n&\nAKMAL BINTI NAZARUDDIN\n\nDengan segala hormatnya mempersilakan\nY.B. / Y.BHG. TAN SRI / PUAN SRI / DATUK / DATO’/ DATIN / TUAN / PUAN / SAUDARA / SAUDARI\nke majlis perkahwinan\n\n\nSYED AHMAD FADHIL BIN SYED HASSAN\n&\nAFIFAH BINTI MUHIDZIR\n\n\nTEMPAT\nKuala Lumpur\n\nTARIKH\n30 Julai 2022\n\nMASA\n11:00 - 16:00`;
 const Introduction = () => {
   return (
@@ -20,18 +24,19 @@ const Introduction = () => {
           Y.B. / Y.BHG. TAN SRI / PUAN SRI / DATUK / DATO’/ DATIN / TUAN / PUAN
           / SAUDARA / SAUDARI
         </p>
-        <p className="intro-text-small">ke majlis perkahwinan</p>
+        <p className="intro-text-small">dan pasangan ke majlis perkahwinan</p>
+        <p className="intro-text-small">anakanda kami</p>
         <p className="intro-text-big" style={{ margin: "50px 0 0" }}>
           {`SYED AHMAD FADHIL BIN SYED HASSAN\n&\nAFIFAH BINTI MUHIDZIR`}
         </p>
         <p className="intro-text-small" style={{ margin: "50px 0 0" }}>
           TEMPAT
         </p>
-        <p className="intro-text-normal">Kuala Lumpur</p>
+        <p className="intro-text-normal">Dewan Merak Kayangan, Balai Felda</p>
         <p className="intro-text-small" style={{ margin: "30px 0 0" }}>
           TARIKH
         </p>
-        <p className="intro-text-normal">30 Julai 2022</p>
+        <p className="intro-text-normal">30 Julai 2022 | 1 Muharram 1444H</p>
         <p className="intro-text-small" style={{ margin: "30px 0 0" }}>
           MASA
         </p>

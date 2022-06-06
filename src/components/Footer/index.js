@@ -5,6 +5,11 @@ import {
   LocalPhone,
   ManOutlined,
   MapOutlined,
+  MusicNote,
+  MusicOff,
+  Speaker,
+  VolumeOff,
+  VolumeUp,
 } from "@mui/icons-material";
 import { IconButton } from "@mui/material";
 import { amber } from "@mui/material/colors";
@@ -12,8 +17,9 @@ import React, { useEffect, useState } from "react";
 import { TABS } from "../common/constants";
 import "./styles.css";
 
-const Footer = ({ onClick }) => {
+const Footer = ({ onClick, soundOn }) => {
   const [active, setActive] = useState(null);
+  const [audioPlay, setAudioPlay] = useState(true);
 
   useEffect(() => {
     setActive(TABS.HOME);
@@ -26,13 +32,29 @@ const Footer = ({ onClick }) => {
     }
   };
 
+  console.log("[DEBUG] :: ", { audioPlay });
+
   const onClickIcon = (value) => {
     setActive(value);
     scrollToSection(value);
-    if (value === TABS.CALENDAR) {
-      window.open("content://com.android.calendar/time");
-    }
     onClick(value);
+    switch (value) {
+      case TABS.AUDIO: {
+        const audio = document.getElementById("audio");
+        console.log("[DEBUG] :: ", { audio });
+        if (audioPlay) {
+          audio.pause();
+          audio.currentTime = 0;
+          setAudioPlay(false);
+        } else {
+          audio.play();
+          setAudioPlay(true);
+        }
+        break;
+      }
+      default:
+        break;
+    }
   };
 
   const getIconColor = (value) => {
@@ -92,6 +114,19 @@ const Footer = ({ onClick }) => {
       </div>
       <div className="footer-divider" />
       <div
+        className={getIconButtonClassName(TABS.AUDIO)}
+        onClick={() => {
+          onClickIcon(TABS.AUDIO);
+        }}
+      >
+        {audioPlay ? (
+          <MusicNote fontSize="medium" />
+        ) : (
+          <MusicOff fontSize="medium" />
+        )}
+        <p>Audio</p>
+      </div>
+      {/* <div
         className={getIconButtonClassName(TABS.CONTACT)}
         onClick={() => {
           onClickIcon(TABS.CONTACT);
@@ -99,7 +134,7 @@ const Footer = ({ onClick }) => {
       >
         <LocalPhone fontSize="medium" />
         <p>Contact</p>
-      </div>
+      </div> */}
     </div>
   );
 };

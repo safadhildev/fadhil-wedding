@@ -1,5 +1,10 @@
 export const assets = {
   inv: require("./inv-bg.jpeg"),
+  goldFlower: require("./gold-flower.png"),
+  hexagonFrame: require("./hexagon-frame.png"),
+  frameWithFlower: require("./frame-with-flower.png"),
+  frameWithFlower2: require("./frame-with-flower2.png"),
+  borderFlower: require("./border-flower.png"),
   frame: require("./frame.png"),
   frame1: require("./frame1.png"),
   pattern: require("./pattern.png"),
@@ -7,6 +12,8 @@ export const assets = {
   frameBrushGold: require("./frame-brush-gold.png"),
   blackTexture1: require("./dark-texture-watercolor.jpg"),
   flower: require("./flower.png"),
+  appleLogo: require("./apple-logo.png"),
+  googleLogo: require("./google-logo.png"),
   song: {
     stillLife: require("./bigbang-still-life.mp3"),
   },

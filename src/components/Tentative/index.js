@@ -5,26 +5,31 @@ import "./styles.css";
 const tentativeData = [
   {
     id: "tentative-01",
-    time: "12:00 PM",
+    time: "11:00 PM",
     text: "Ketibaan Tetamu",
   },
   {
     id: "tentative-02",
     time: "12:30 PM",
-    text: "Ketibaan Pengantin",
+    text: "Ketibaan VIP / VVIP",
   },
   {
     id: "tentative-03",
-    time: "1:00 PM",
-    text: "Makan Beradap",
+    time: "12:45 PM",
+    text: "Ketibaan Pengantin",
   },
   {
     id: "tentative-04",
-    time: "2:00 PM",
-    text: "Sesi Bergambar",
+    time: "1:00 PM",
+    text: "Sesi Bergambar (Keluarga)",
   },
   {
     id: "tentative-05",
+    time: "2:00 PM",
+    text: "Sesi Bergambar (Tetamu)",
+  },
+  {
+    id: "tentative-06",
     time: "4:00 PM",
     text: "Tamat",
   },

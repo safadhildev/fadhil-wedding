@@ -14,7 +14,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   position: absolute;
-  z-index: 1;
+  z-index: 0;
   height: 100%;
   top: 0;
   left: 0;
@@ -24,24 +24,31 @@
 }
 
 .ic2-frame {
-  border-radius: 0px;
-  padding: calc(100vw / 500 * 150) calc(100vw / 500 * 80);
-  align-items: center;
+  position: relative;
   display: flex;
   flex: 1;
   flex-direction: column;
-  position: relative;
+  align-items: center;
+  border-radius: 0px;
+  padding: calc(100vw / 500 * 150) calc(100vw / 500 * 80);
 }
 
 .ic2-frame-img {
+  display: block;
   position: absolute;
   left: 0;
   top: calc(100vw / 500 * 150);
+  transform: scale(1);
 }
 
-.ic2-frame-img img {
+.ic2-frame1 {
+  /* animation: rotation 500s infinite linear; */
+  left: 0;
+  top: 0;
   width: 100%;
   height: 100%;
+  /* transform: rotate(40deg) ; */
+  /* transform: scaleX(-1) rotate(130deg); */
 }
 
 .ic2-frame-content {
@@ -136,6 +143,15 @@
   font-size: calc(100vw / 500 * 40);
   font-weight: bold;
   font-family: "Satisfy", cursive;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
 }
 
 @media only screen and (min-width: 500px) {

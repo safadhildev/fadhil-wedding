@@ -1,0 +1,52 @@
+.calendar-header p {
+  color: #515151;
+  font-family: "Roboto Slab" sans-serif;
+  font-size: 14px;
+  text-align: center;
+  margin: 20px 0;
+}
+.calendar-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.calendar-img-wrapper {
+  margin: 20px 0 0;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+}
+.calendar-img-wrapper a {
+  text-decoration: none;
+}
+
+.calendar-img-wrapper div {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+}
+
+.calendar-img-wrapper:active {
+  opacity: 0.6;
+}
+
+.calendar-img-wrapper p {
+  color: #515151;
+  margin: 10px 0;
+  font-size: 14px;
+}
+
+.calendar-img-apple {
+  width: 55px;
+  height: 55px;
+}
+
+.calendar-img-google {
+  width: 50px;
+  height: 50px;
+}

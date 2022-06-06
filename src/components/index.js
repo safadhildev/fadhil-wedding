@@ -5,3 +5,4 @@ export { default as Introduction } from "./Introduction";
 export { default as InvitationCard } from "./InvitationCard";
 export { default as Tentative } from "./Tentative";
 export { default as RSVP } from "./RSVP";
+export { default as Calendar } from "./Calendar";
