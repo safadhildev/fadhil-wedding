@@ -22,17 +22,6 @@ import InvitationCard2 from "../../components/InvitationCard2";
 const Home = ({ section, showModal, onCloseModal }) => {
   const [loading, setLoading] = useState(true);
 
-  // const onPlayAudio = () => {
-  //   if (audioRef && audioRef?.current) {
-  //     audioRef?.current.play();
-  //     audioRef.current.volume = 0.3;
-  //   }
-  // };
-  // useEffect(() => {
-  //   onPlayAudio();
-  //   document.body.addEventListener("touchstart", onPlayAudio);
-  // }, [audioRef]);
-
   useEffect(() => {
     const splashScreenDom = document.getElementsByClassName("splash-container");
     console.log("[DEBUG] :: ", { splashScreenDom });

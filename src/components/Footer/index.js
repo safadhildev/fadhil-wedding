@@ -38,11 +38,11 @@ const Footer = ({ onClick, soundOn }) => {
   };
 
   useEffect(() => {
-    window.addEventListener("focus", onUnmuteAudio);
+    // window.addEventListener("focus", onUnmuteAudio);
     window.addEventListener("blur", onMuteAudio);
 
     return () => {
-      window.removeEventListener("focus", onUnmuteAudio);
+      // window.removeEventListener("focus", onUnmuteAudio);
       window.removeEventListener("blur", onMuteAudio);
     };
   }, []);
@@ -155,6 +155,7 @@ const Footer = ({ onClick, soundOn }) => {
         controls
         muted={mute}
         preload="auto"
+        onLoad={onUnmuteAudio}
       >
         <source src={assets.song.stillLife} type="audio/mpeg" />
       </audio>
