@@ -1,0 +1,48 @@
+.location-wrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 15px;
+}
+
+.location-header-wrapper {
+  padding: 10px 0;
+}
+
+.location-header {
+  font-family: "Roboto Slab";
+  font-size: 12px;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  color: #515151;
+  white-space: pre-wrap;
+}
+
+.location-maps-wrapper {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.location-maps-item {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 0;
+}
+
+.location-maps-item img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+}
+
+.location-maps-item {
+  font-family: "Roboto Slab", sans-serif;
+  font-size: 14px;
+  color: #515151;
+}

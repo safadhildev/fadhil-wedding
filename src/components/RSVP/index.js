@@ -13,7 +13,7 @@ const initialRSVPValues = {
   name: "",
   head_count: 1,
   mobile: "",
-  attend: false,
+  attend: true,
 };
 const initialAlertValues = {
   type: null,
@@ -48,11 +48,17 @@ const attendList = [
   { value: false, label: "Tidak Hadir" },
 ];
 
+const initialValid = {
+  name: null,
+  mobile: null,
+};
+
 const RSVP = ({ visible, onClose }) => {
   const [formValues, setFormValues] = useState(initialRSVPValues);
   const [submitLoading, setSubmitLoading] = useState(false);
   const [disableSubmit, setDisableSubmit] = useState(true);
   const [alert, setAlert] = useState(initialAlertValues);
+  const [isValid, setIsValid] = useState(initialValid);
 
   const onCloseModal = () => {
     console.log("[DEBUG] - onCloseModal");
@@ -79,17 +85,46 @@ const RSVP = ({ visible, onClose }) => {
     }
   };
 
-  useEffect(() => {
-    setFormValues(initialRSVPValues);
-  }, [visible]);
+  const onConfirm = () => {
+    if (window.confirm("Hantar?")) {
+      onSubmitRSVP();
+    }
+  };
 
   useEffect(() => {
-    if (formValues?.name?.length > 0 && formValues?.mobile?.length > 0) {
+    setFormValues(initialRSVPValues);
+    setIsValid(initialValid);
+  }, [visible]);
+
+  const validateName = (val) => {
+    const isNameValid = val?.length > 0;
+    setIsValid({ ...isValid, name: isNameValid });
+  };
+
+  const validateMobile = (val) => {
+    const isLengthEnough = val > 8;
+    const ifStartWithPlus = val?.slice(0, 1) === "+";
+    const numbers = ifStartWithPlus ? val?.slice(1) : val;
+    const isNumber = !isNaN(numbers);
+
+    console.log("[DEBUG] :: ", {
+      valid: isLengthEnough && isNumber,
+    });
+
+    setIsValid({
+      ...isValid,
+      mobile: isLengthEnough && isNumber,
+    });
+  };
+
+  useEffect(() => {
+    if (isValid?.name && isValid.mobile) {
+      console.log("[DEBUG] == FORM VALID :: ");
       setDisableSubmit(false);
     } else {
       setDisableSubmit(true);
     }
-  }, [formValues]);
+  }, [isValid]);
 
   const getHeadCountValue = () => {
     console.log("[DEBUG] :: ", {
@@ -107,32 +142,48 @@ const RSVP = ({ visible, onClose }) => {
       <div style={{ padding: "10px 20px" }}>
         <TextField
           label="Nama"
+          required
           variant="outlined"
           fullWidth
           value={formValues?.name}
+          error={isValid?.name !== null && !isValid?.name}
+          helperText={
+            isValid?.name !== null && !isValid?.name
+              ? "Name cannot be blank"
+              : null
+          }
           style={{
             margin: "10px 0",
-            backgroundColor: "#EEEEEE",
+            // backgroundColor: "#EEEEEE",
             borderRadius: 5,
             fontFamily: `Roboto Slab, sans-serif`,
           }}
           onChange={(event) => {
+            validateName(event.target.value);
             setFormValues({ ...formValues, name: event.target.value });
           }}
         />
         <TextField
+          required
+          error={isValid?.mobile !== null && !isValid?.mobile}
           label="No. Telefon"
+          helperText={
+            isValid?.mobile !== null && !isValid?.mobile
+              ? "Please fill in a valid mobile number"
+              : null
+          }
           variant="outlined"
           fullWidth
           color="primary"
           value={formValues?.mobile}
           style={{
             margin: "10px 0",
-            backgroundColor: "#EEEEEE",
+            // backgroundColor: "#EEEEEE",
             borderRadius: 5,
             fontFamily: `Roboto Slab, sans-serif`,
           }}
           onChange={(event) => {
+            validateMobile(event.target.value);
             setFormValues({ ...formValues, mobile: event.target.value });
           }}
         />
@@ -145,7 +196,7 @@ const RSVP = ({ visible, onClose }) => {
           }}
         >
           <div style={{ flex: 1 }}>
-            <p className="rsvp-text bold">Kehadiran</p>
+            <p className="rsvp-text">Kehadiran</p>
           </div>
           <div style={{ flex: 1 }}>
             <TextField
@@ -181,7 +232,7 @@ const RSVP = ({ visible, onClose }) => {
             }}
           >
             <div style={{ display: "flex", flex: 1 }}>
-              <p className="rsvp-text bold">Jumlah Bilangan</p>
+              <p className="rsvp-text">Jumlah Bilangan</p>
             </div>
             <div
               style={{
@@ -222,9 +273,9 @@ const RSVP = ({ visible, onClose }) => {
         <div style={{ margin: "30px 0 0" }}>
           <Button
             text="Hantar"
-            onClick={onSubmitRSVP}
+            onClick={onConfirm}
             loading={submitLoading}
-            disabled={disableSubmit}
+            disabled={disableSubmit || submitLoading}
           />
         </div>
       </div>

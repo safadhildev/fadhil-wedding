@@ -27,14 +27,15 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0px 20px;
+  padding: 10px 20px;
 }
 
 .home-section3-contact-item p {
   flex: 1;
-  font-family: "Satisfy", cursive;
+  /* font-family: "Satisfy", cursive; */
+  font-family: "Roboto Slab", sans-serif;
   font-weight: bold;
-  font-size: 18px;
+  font-size: 14px;
 }
 
 .home-section3-contact-icon {

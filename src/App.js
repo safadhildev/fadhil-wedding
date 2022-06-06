@@ -14,15 +14,15 @@ AOS.init();
 const theme = createTheme({
   palette: {
     primary: {
-      light: "#757ce8",
-      main: "#3f50b5",
-      dark: "#002884",
+      light: "#c7ad88",
+      main: "#c7ad88",
+      dark: "#c7ad88",
       contrastText: "#fff",
     },
     secondary: {
-      light: "#ff7961",
-      main: "#f44336",
-      dark: "#ba000d",
+      light: "#151515",
+      main: "#151515",
+      dark: "#151515",
       contrastText: "#000",
     },
   },

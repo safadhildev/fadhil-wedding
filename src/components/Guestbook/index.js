@@ -14,6 +14,7 @@ import Header from "../common/Header";
 
 import "./styles.css";
 import { Button, Input, Modal } from "../common";
+import moment from "moment";
 
 const db = getFirestore(app);
 
@@ -53,10 +54,11 @@ const Guestbook = () => {
       setSubmitLoading(true);
       const docRef = await addDoc(collection(db, "guestbook"), {
         ...formValues,
-        date: new Date(),
+        date: moment().format(),
       });
       if (docRef?.id) {
         onCloseModal();
+        getGuestbookData();
       }
     } catch (err) {
       console.log("[ERROR] :: ", { err });
@@ -87,9 +89,20 @@ const Guestbook = () => {
 
   const renderItem = (item, index) => {
     const lastItem = index === data?.length - 1;
+
+    const date = item?.date ? moment(item.date).format("DD MMM, hh:mma") : null;
+
     return (
-      <div className="guestbook-item-wrapper">
-        <p className="guestbook-item-name">{item?.name}</p>
+      <div key={item?.date} className="guestbook-item-wrapper">
+        <div className="guestbook-item-name-wrapper">
+          <p className="guestbook-item-name">{item?.name}</p>
+          {date && (
+            <div style={{ margin: "0 0 0 5px" }}>
+              <p className="guestbook-item-name">• {date}</p>
+            </div>
+          )}
+        </div>
+
         <p className="guestbook-item-message">{item?.message}</p>
         {!lastItem && <div className="guestbook-item-line" />}
       </div>

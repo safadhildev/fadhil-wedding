@@ -12,6 +12,7 @@ import {
   Tentative,
   RSVP,
   Calendar,
+  Location,
 } from "../../components";
 import { assets } from "../../assets";
 import Guestbook from "../../components/Guestbook";
@@ -82,8 +83,8 @@ const Home = ({ section, showModal, onCloseModal }) => {
           visible={showModal?.visible && showModal?.type === TABS.RSVP}
           onClose={onCloseModal}
         />
-        <RSVP
-          visible={showModal?.visible && showModal?.type === TABS.RSVP}
+        <Location
+          visible={showModal?.visible && showModal?.type === TABS.LOCATION}
           onClose={onCloseModal}
         />
 

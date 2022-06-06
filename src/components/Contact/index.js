@@ -6,15 +6,20 @@ import Header from "../common/Header";
 
 const contacts = [
   {
-    id: 1,
-    name: "Fadhil",
-    phone: "+60142326966",
+    id: 2,
+    name: "Syed Hassan Bin Syed Ali (Bapa)",
+    phone: "+60102283001",
   },
   {
     id: 2,
-    name: "Hassan",
-    phone: "+60102283001",
+    name: "Akmal Binti Nazaruddin (Ibu)",
+    phone: "+60172105107",
   },
+  // {
+  //   id: 1,
+  //   name: "Syed Ahmad Fadhil Bin Syed Hassan (Pengantin Lelaki)",
+  //   phone: "+60142326966",
+  // },
 ];
 
 const Contact = () => {

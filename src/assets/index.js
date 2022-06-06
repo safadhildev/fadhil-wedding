@@ -14,6 +14,8 @@ export const assets = {
   flower: require("./flower.png"),
   appleLogo: require("./apple-logo.png"),
   googleLogo: require("./google-logo.png"),
+  gMapsLogo: require("./gmaps-logo.png"),
+  wazeLogo: require("./waze-logo.png"),
   song: {
     stillLife: require("./bigbang-still-life.mp3"),
   },
