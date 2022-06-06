@@ -6,32 +6,46 @@
   max-height: 100vh;
   position: relative;
   background-color: #ffffff;
-  padding: 50px 20px;
+  padding: 50px 20px 100px;
 }
 
 .intro-text-small {
+  display: flex;
+  justify-content: center;
   font-size: 14px;
+  line-height: 22px;
   color: #000;
   white-space: pre-line;
   font-family: "Roboto Slab", serif;
   text-align: center;
-  font-weight: 400;
+  font-weight: normal;
 }
 
 .intro-text-normal {
-  color: #000;
-  white-space: pre-line;
-  font-family: "Roboto Slab", serif;
-  font-size: 14px;
-  text-align: center;
-  font-weight: 600;
-}
-
-.intro-text-big {
+  display: flex;
+  justify-content: center;
   color: #000;
   white-space: pre-line;
   font-family: "Roboto Slab", serif;
   font-size: 16px;
+  line-height: 24px;
   text-align: center;
-  font-weight: 600;
+  font-weight: normal;
+}
+
+.intro-text-big {
+  display: flex;
+  justify-content: center;
+  color: #000;
+  white-space: pre-line;
+  font-family: "Roboto Slab", serif;
+  font-size: 18px;
+  line-height: 24px;
+  text-align: center;
+
+  font-weight: normal;
+}
+
+.bold {
+  font-weight: bold;
 }

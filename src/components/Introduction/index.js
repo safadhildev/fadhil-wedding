@@ -14,33 +14,43 @@ const Introduction = () => {
           السَّلاَمُ عَلَيْكُمْ وَرَحْمَةُ اللهِ وَبَرَكَاتُهُ
         </p>
         <p
-          className="intro-text-big"
+          className="intro-text-big bold"
           style={{ margin: "30px 0 0" }}
         >{`SYED HASSAN BIN SYED ALI\n&\nAKMAL BINTI NAZARUDDIN`}</p>
         <p className="intro-text-small" style={{ margin: "30px 0 0" }}>
           Dengan segala hormatnya mempersilakan
         </p>
-        <p className="intro-text-normal">
+        <p className="intro-text-normal bold">
           Y.B. / Y.BHG. TAN SRI / PUAN SRI / DATUK / DATO’/ DATIN / TUAN / PUAN
           / SAUDARA / SAUDARI
         </p>
-        <p className="intro-text-small">dan pasangan ke majlis perkahwinan</p>
+        <p className="intro-text-small">
+          dan{" "}
+          <p className="intro-text-small bold" style={{ margin: "0 5px 0" }}>
+            pasangan
+          </p>{" "}
+          ke majlis perkahwinan
+        </p>
         <p className="intro-text-small">anakanda kami</p>
-        <p className="intro-text-big" style={{ margin: "50px 0 0" }}>
+        <p className="intro-text-big bold" style={{ margin: "50px 0 0" }}>
           {`SYED AHMAD FADHIL BIN SYED HASSAN\n&\nAFIFAH BINTI MUHIDZIR`}
         </p>
         <p className="intro-text-small" style={{ margin: "50px 0 0" }}>
           TEMPAT
         </p>
-        <p className="intro-text-normal">Dewan Merak Kayangan, Balai Felda</p>
+        <p className="intro-text-normal bold">
+          Dewan Merak Kayangan, Balai Felda
+        </p>
         <p className="intro-text-small" style={{ margin: "30px 0 0" }}>
           TARIKH
         </p>
-        <p className="intro-text-normal">30 Julai 2022 | 1 Muharram 1444H</p>
+        <p className="intro-text-normal bold">
+          30 Julai 2022 | 1 Muharram 1444H
+        </p>
         <p className="intro-text-small" style={{ margin: "30px 0 0" }}>
           MASA
         </p>
-        <p className="intro-text-normal">11:00 AM - 4:00 PM</p>
+        <p className="intro-text-normal bold">11:00 AM - 4:00 PM</p>
       </div>
     </div>
   );
