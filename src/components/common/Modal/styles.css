@@ -4,9 +4,6 @@
   left: 0;
   right: 0;
   bottom: -150vh;
-  /* width: 475px;*/
-
-  /* height: 80%; */
   transition: all 0.3s ease-out;
   z-index: 999;
   justify-content: center;
@@ -22,6 +19,7 @@
   background-color: #ffffff;
   box-shadow: 0 0 4px 0px rgba(0, 0, 0, 0.15);
   padding: 0 0 40px;
+  position: relative;
 }
 
 .Modal.Show {
@@ -56,6 +54,7 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  position: relative;
 }
 
 .modal-title {

@@ -9,7 +9,7 @@
   color: #000;
   padding: 50px 20px 150px;
   overflow: hidden;
-  border-top: 1px solid #d9ac53;
+  border-top: 1px solid rgba(217, 172, 83, 0.5);
 }
 
 .home-section3-title {
@@ -36,6 +36,7 @@
   font-family: "Roboto Slab", sans-serif;
   font-weight: bold;
   font-size: 14px;
+  white-space: pre-line;
 }
 
 .home-section3-contact-icon {

@@ -6,7 +6,9 @@ import "./styles.css";
 const InvitationCard2 = () => {
   return (
     <div id={TABS.HOME} tabIndex={0} className="ic2-container">
-      <div className="ic2-bg" />
+      <div className="ic2-bg">
+        <img alt="" src={assets.invBg} />
+      </div>
 
       <div className="ic2-frame">
         <div className="ic2-frame-img">

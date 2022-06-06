@@ -6,7 +6,7 @@
   flex-direction: column;
   position: relative;
   overflow: hidden;
-  border-top: 1px solid #d9ac53;
+  border-top: 1px solid rgba(217, 172, 83, 0.5);
 }
 
 .tentative-title {
@@ -57,7 +57,7 @@
 
 .tentative-item p,
 .tentative-time p {
-  font-size: 18px;
+  font-size: 16px;
   font-family: "Roboto Slab";
 }
 

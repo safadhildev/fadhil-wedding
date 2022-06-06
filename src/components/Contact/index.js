@@ -2,17 +2,17 @@ import React from "react";
 import { Call, WhatsApp } from "@mui/icons-material";
 import { TABS } from "../common/constants";
 import "./styles.css";
-import Header from "../common/Header";
+import { Header, BackgroundImage } from "../common";
 
 const contacts = [
   {
-    id: 2,
-    name: "Syed Hassan Bin Syed Ali (Bapa)",
+    id: 1,
+    name: "Syed Hassan Bin Syed Ali\n(Bapa)",
     phone: "+60102283001",
   },
   {
     id: 2,
-    name: "Akmal Binti Nazaruddin (Ibu)",
+    name: "Akmal Binti Nazaruddin\n(Ibu)",
     phone: "+60172105107",
   },
   // {
@@ -78,6 +78,7 @@ const Contact = () => {
       className="home-section3"
       data-aos="zoom-in"
     >
+      <BackgroundImage />
       <Header text="Hubungi" />
       <div className="home-section3-contact-wrapper">
         {contacts.map(renderContact)}

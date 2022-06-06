@@ -13,7 +13,7 @@ import { app } from "../../firebase";
 import Header from "../common/Header";
 
 import "./styles.css";
-import { Button, Input, Modal } from "../common";
+import { BackgroundImage, Button, Input, Modal } from "../common";
 import moment from "moment";
 
 const db = getFirestore(app);
@@ -113,9 +113,10 @@ const Guestbook = () => {
     <>
       <div
         tabIndex={3}
-        className="home-section-countdown-container"
+        className="home-section-guestbook-container"
         data-aos="zoom-in"
       >
+        <BackgroundImage />
         <Header text="Guestbook" />
 
         <div className="guestbook-list-wrapper">

@@ -3,6 +3,20 @@
   padding: 0;
 }
 
+.home-hidden {
+  height: 0;
+  overflow: hidden;
+  display: none;
+  opacity: 0;
+}
+
+.home-shown {
+  height: auto;
+  display: flex;
+  overflow: auto;
+  transition: display 0s 2s, opacity 2s linear;
+}
+
 .home-body {
   display: flex;
   flex-direction: column;

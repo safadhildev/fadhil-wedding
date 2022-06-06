@@ -3,6 +3,7 @@ import moment from "moment";
 import "./styles.css";
 import { assets } from "../../assets";
 import Header from "../common/Header";
+import { BackgroundImage } from "../common";
 
 const Countdown = () => {
   const [countdown, setCountdown] = useState({
@@ -76,6 +77,7 @@ const Countdown = () => {
       className="home-section-countdown-container"
       data-aos="zoom-in"
     >
+      <BackgroundImage />
       <Header text="Countdown" />
       {/* <div className="countdown-title-border" /> */}
       {/* <div

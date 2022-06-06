@@ -1,4 +1,5 @@
 import React from "react";
+import { BackgroundImage } from "../common";
 import Header from "../common/Header";
 import "./styles.css";
 
@@ -58,8 +59,7 @@ const Tentative = () => {
 
   return (
     <div className="tentative-container" data-aos="fade-in">
-      {/* <p className="tentative-title">Aturcara</p>
-      <div className="tentative-title-border" /> */}
+      <BackgroundImage />
       <Header text="Aturcara" />
       <div className="tentative-table-wrapper">
         {tentativeData?.map(renderItem)}

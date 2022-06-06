@@ -33,7 +33,12 @@ export const assets = {
     "https://firebasestorage.googleapis.com/v0/b/fadhil-wedding.appspot.com/o/assets%2Fgmaps-logo.png?alt=media&token=88c6b887-5288-4b26-a3b4-123de3a0c5be",
   wazeLogo:
     "https://firebasestorage.googleapis.com/v0/b/fadhil-wedding.appspot.com/o/assets%2Fwaze-logo.png?alt=media&token=209984de-c8d3-4b4c-b61d-ecb6dd3d9316",
+  marbleBg:
+    "https://firebasestorage.googleapis.com/v0/b/fadhil-wedding.appspot.com/o/assets%2Fmarble-bg.jpeg?alt=media&token=e79322ce-cc42-4dfe-ac6c-8323088dcf06",
+  invBg:
+    "https://firebasestorage.googleapis.com/v0/b/fadhil-wedding.appspot.com/o/assets%2Finv-bg.jpeg?alt=media&token=8e65cd0a-e907-406a-87d8-192aaafc6a82",
   song: {
-    stillLife: require("./bigbang-still-life.mp3"),
+    stillLife:
+      "https://firebasestorage.googleapis.com/v0/b/fadhil-wedding.appspot.com/o/assets%2Fbigbang-still-life.mp3?alt=media&token=be9bde07-6a36-45d8-842c-b23f2223fc5b",
   },
 };

@@ -1,4 +1,6 @@
 import React from "react";
+import { assets } from "../../assets";
+import { BackgroundImage } from "../common";
 import "./styles.css";
 
 const texts = {
@@ -9,6 +11,23 @@ const texts = {
 const Introduction = () => {
   return (
     <div tabIndex={1} className="intro-container">
+      <div
+        style={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          zIndex: 0,
+          opacity: 0.5,
+        }}
+      >
+        <img
+          alt=""
+          src={assets.marbleBg}
+          style={{ width: "100%", height: "100%", objectFit: "cover" }}
+        />
+      </div>
       <div data-aos="fade-zoom-in" data-aos-duration={1000}>
         <p className="intro-text-normal" style={{ fontSize: "24px" }}>
           السَّلاَمُ عَلَيْكُمْ وَرَحْمَةُ اللهِ وَبَرَكَاتُهُ
@@ -24,13 +43,7 @@ const Introduction = () => {
           Y.B. / Y.BHG. TAN SRI / PUAN SRI / DATUK / DATO’/ DATIN / TUAN / PUAN
           / SAUDARA / SAUDARI
         </p>
-        <p className="intro-text-small">
-          dan{" "}
-          <p className="intro-text-small bold" style={{ margin: "0 5px 0" }}>
-            pasangan
-          </p>{" "}
-          ke majlis perkahwinan
-        </p>
+        <p className="intro-text-small">dan pasangan ke majlis perkahwinan</p>
         <p className="intro-text-small">anakanda kami</p>
         <p className="intro-text-big bold" style={{ margin: "50px 0 0" }}>
           {`SYED AHMAD FADHIL BIN SYED HASSAN\n&\nAFIFAH BINTI MUHIDZIR`}
@@ -39,7 +52,7 @@ const Introduction = () => {
           TEMPAT
         </p>
         <p className="intro-text-normal bold">
-          Dewan Merak Kayangan, Balai Felda
+          {`Dewan Merak Kayangan, Balai Felda,\nKuala Lumpur`}
         </p>
         <p className="intro-text-small" style={{ margin: "30px 0 0" }}>
           TARIKH

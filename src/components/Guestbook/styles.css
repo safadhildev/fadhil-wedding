@@ -1,3 +1,15 @@
+.home-section-guestbook-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #fff;
+  color: #000;
+  padding: 50px 20px;
+  overflow: hidden;
+  border-top: 1px solid rgba(217, 172, 83, 0.5);
+  position: relative;
+}
+
 .guestbook-list-wrapper {
   margin: 30px 0 0;
   border: 1px solid #e8e8e8;

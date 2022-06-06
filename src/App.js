@@ -2,13 +2,14 @@ import "./App.css";
 import { Route, Routes } from "react-router";
 import Home from "./Screens/Home";
 import Footer from "./components/Footer";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css"; // You can also use <link> for styles
 import { RSVP, SplashScreen } from "./components";
 import { createTheme, ThemeProvider } from "@mui/material";
 import { TABS } from "./components/common/constants";
 import ICalendarLink from "react-icalendar-link";
+import { assets } from "./assets";
 
 AOS.init();
 const theme = createTheme({
@@ -54,22 +55,37 @@ const App = () => {
   };
 
   return (
-    <ThemeProvider theme={theme}>
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <Home
-              section={activeTab}
-              showModal={showModal}
-              onCloseModal={onCloseModal}
-            />
-          }
-        />
-      </Routes>
-
-      <Footer onClick={onClickTab} />
-    </ThemeProvider>
+    <>
+      <ThemeProvider theme={theme}>
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <Home
+                section={activeTab}
+                showModal={showModal}
+                onCloseModal={onCloseModal}
+              />
+            }
+          />
+        </Routes>
+        <Footer onClick={onClickTab} />
+      </ThemeProvider>
+      {/* <audio
+        ref={audioRef}
+        id="audio"
+        className="bg-music"
+        playsInline
+        autoPlay
+        loop
+        hidden
+        controls
+        muted={mute}
+        preload="auto"
+      >
+        <source src={assets.song.stillLife} type="audio/mpeg" />
+      </audio> */}
+    </>
   );
 };
 

@@ -1,7 +1,8 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import { assets } from "../../assets";
 import { ClipLoader, BounceLoader } from "react-spinners";
 import "./styles.css";
+import { Button } from "../common";
 
 const assetArray = [
   assets.frame1,
@@ -10,16 +11,11 @@ const assetArray = [
   assets.gMapsLogo,
   assets.wazeLogo,
   assets.strokeGold,
+  assets.marbleBg,
 ];
 
 const SplashScreen = ({ visible, onFinish }) => {
-  const getImages = () => {
-    assetArray.forEach((item, index) => {
-      const img = new Image();
-      img.src = item;
-    });
-  };
-
+  const splashRef = useRef(null);
   const cacheImages = async () => {
     const promises = await assetArray.map((src) => {
       return new Promise((resolve, reject) => {
@@ -36,11 +32,13 @@ const SplashScreen = ({ visible, onFinish }) => {
   };
 
   useEffect(() => {
-    // getImages();
     cacheImages();
   }, []);
   return (
-    <div className={`splash-container ${visible ? "shown" : "hidden"}`}>
+    <div
+      className={`splash-container ${visible ? "shown" : "hidden"}`}
+      style={{ overscrollBehavior: "contain", pointerEvents: "none" }}
+    >
       {visible && (
         <div className="splash-wrapper">
           <BounceLoader color="#c7ad88" size={100} />

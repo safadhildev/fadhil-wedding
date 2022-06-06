@@ -21,38 +21,22 @@ import InvitationCard2 from "../../components/InvitationCard2";
 
 const Home = ({ section, showModal, onCloseModal }) => {
   const [loading, setLoading] = useState(true);
-  const audioRef = useRef(null);
-  const [mute, setMute] = useState(false);
 
-  const onPlayAudio = () => {
-    if (audioRef && audioRef?.current) {
-      audioRef?.current.play();
-      audioRef.current.volume = 0.01;
-    }
-  };
-
-  useEffect(() => {
-    onPlayAudio();
-    document.body.addEventListener("touchstart", onPlayAudio);
-  }, [audioRef]);
-
-  const onMuteAudio = () => {
-    setMute(true);
-  };
-
-  const onUnmuteAudio = () => {
-    setMute(false);
-  };
+  // const onPlayAudio = () => {
+  //   if (audioRef && audioRef?.current) {
+  //     audioRef?.current.play();
+  //     audioRef.current.volume = 0.3;
+  //   }
+  // };
+  // useEffect(() => {
+  //   onPlayAudio();
+  //   document.body.addEventListener("touchstart", onPlayAudio);
+  // }, [audioRef]);
 
   useEffect(() => {
-    window.addEventListener("focus", onUnmuteAudio);
-    window.addEventListener("blur", onMuteAudio);
-
-    return () => {
-      window.removeEventListener("focus", onUnmuteAudio);
-      window.removeEventListener("blur", onMuteAudio);
-    };
-  }, []);
+    const splashScreenDom = document.getElementsByClassName("splash-container");
+    console.log("[DEBUG] :: ", { splashScreenDom });
+  }, [document]);
 
   return (
     <>
@@ -63,22 +47,8 @@ const Home = ({ section, showModal, onCloseModal }) => {
         }}
       />
 
-      <div className="home-body">
+      <div className={`home-body ${loading ? "home-hidden" : "home-shown"}`}>
         <div className="home-container">
-          <audio
-            ref={audioRef}
-            id="audio"
-            className="bg-music"
-            playsInline
-            autoPlay
-            loop
-            hidden
-            controls
-            muted={mute}
-          >
-            <source src={assets.song.stillLife} type="audio/mpeg" />
-          </audio>
-
           <InvitationCard2 />
           <Introduction />
           <Tentative />
