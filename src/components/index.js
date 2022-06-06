@@ -7,3 +7,4 @@ export { default as Tentative } from "./Tentative";
 export { default as RSVP } from "./RSVP";
 export { default as Calendar } from "./Calendar";
 export { default as Location } from "./Location";
+export { default as SplashScreen } from "./SplashScreen";

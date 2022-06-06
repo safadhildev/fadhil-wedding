@@ -13,12 +13,14 @@ import {
   RSVP,
   Calendar,
   Location,
+  SplashScreen,
 } from "../../components";
 import { assets } from "../../assets";
 import Guestbook from "../../components/Guestbook";
 import InvitationCard2 from "../../components/InvitationCard2";
 
 const Home = ({ section, showModal, onCloseModal }) => {
+  const [loading, setLoading] = useState(true);
   const audioRef = useRef(null);
   const [mute, setMute] = useState(false);
 
@@ -53,64 +55,74 @@ const Home = ({ section, showModal, onCloseModal }) => {
   }, []);
 
   return (
-    <div className="home-body">
-      <div className="home-container">
-        <audio
-          ref={audioRef}
-          id="audio"
-          className="bg-music"
-          playsInline
-          autoPlay
-          loop
-          hidden
-          controls
-          muted={mute}
-        >
-          <source src={assets.song.stillLife} type="audio/mpeg" />
-        </audio>
+    <>
+      <SplashScreen
+        visible={loading}
+        onFinish={() => {
+          setLoading(false);
+        }}
+      />
 
-        <InvitationCard2 />
-        <Introduction />
-        <Tentative />
-        <Countdown />
-        <Guestbook />
-        <Contact />
-        <Calendar
-          visible={showModal?.visible && showModal?.type === TABS.CALENDAR}
-          onClose={onCloseModal}
-        />
-        <RSVP
-          visible={showModal?.visible && showModal?.type === TABS.RSVP}
-          onClose={onCloseModal}
-        />
-        <Location
-          visible={showModal?.visible && showModal?.type === TABS.LOCATION}
-          onClose={onCloseModal}
-        />
+      <div className="home-body">
+        <div className="home-container">
+          <audio
+            ref={audioRef}
+            id="audio"
+            className="bg-music"
+            playsInline
+            autoPlay
+            loop
+            hidden
+            controls
+            muted={mute}
+          >
+            <source src={assets.song.stillLife} type="audio/mpeg" />
+          </audio>
 
-        <div tabIndex={4} className="home-footer">
-          <div className="home-footer-credit">
-            <p>
-              Icons made by{" "}
-              <a href="https://www.flaticon.com/authors/flat-icons">
-                Flat Icons
-              </a>{" "}
-              and <a href="https://www.flaticon.com/authors/freepik">Freepik</a>{" "}
-              from www.flaticon.com
-            </p>
-            <p>
-              rectangular png from{" "}
-              <a href="https://pngtree.com/so/rectangular">pngtree.com/</a>
-            </p>
-            <p>
-              <a href="https://www.freepik.com/photos/black-sand">
-                Black sand photo created by Vectorium - www.freepik.com
-              </a>
-            </p>
+          <InvitationCard2 />
+          <Introduction />
+          <Tentative />
+          <Countdown />
+          <Guestbook />
+          <Contact />
+          <Calendar
+            visible={showModal?.visible && showModal?.type === TABS.CALENDAR}
+            onClose={onCloseModal}
+          />
+          <RSVP
+            visible={showModal?.visible && showModal?.type === TABS.RSVP}
+            onClose={onCloseModal}
+          />
+          <Location
+            visible={showModal?.visible && showModal?.type === TABS.LOCATION}
+            onClose={onCloseModal}
+          />
+
+          <div tabIndex={4} className="home-footer">
+            <div className="home-footer-credit">
+              <p>
+                Icons made by{" "}
+                <a href="https://www.flaticon.com/authors/flat-icons">
+                  Flat Icons
+                </a>{" "}
+                and{" "}
+                <a href="https://www.flaticon.com/authors/freepik">Freepik</a>{" "}
+                from www.flaticon.com
+              </p>
+              <p>
+                rectangular png from{" "}
+                <a href="https://pngtree.com/so/rectangular">pngtree.com/</a>
+              </p>
+              <p>
+                <a href="https://www.freepik.com/photos/black-sand">
+                  Black sand photo created by Vectorium - www.freepik.com
+                </a>
+              </p>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

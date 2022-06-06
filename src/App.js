@@ -5,7 +5,7 @@ import Footer from "./components/Footer";
 import { useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css"; // You can also use <link> for styles
-import { RSVP } from "./components";
+import { RSVP, SplashScreen } from "./components";
 import { createTheme, ThemeProvider } from "@mui/material";
 import { TABS } from "./components/common/constants";
 import ICalendarLink from "react-icalendar-link";
@@ -31,8 +31,8 @@ const theme = createTheme({
 const initialModalState = { visible: false, type: null };
 
 const App = () => {
+  const [loading, setLoading] = useState(true);
   const [activeTab, setActiveTab] = useState(null);
-
   const [showModal, setShowModal] = useState(initialModalState);
 
   const onCloseModal = () => {
