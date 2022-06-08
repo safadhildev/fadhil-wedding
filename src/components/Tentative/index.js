@@ -6,8 +6,8 @@ import "./styles.css";
 const tentativeData = [
   {
     id: "tentative-01",
-    time: "11:00 PM",
-    text: "Ketibaan Tetamu",
+    time: "11:00 AM",
+    text: "Jamuan Makan",
   },
   {
     id: "tentative-02",
@@ -16,19 +16,19 @@ const tentativeData = [
   },
   {
     id: "tentative-03",
-    time: "12:45 PM",
+    time: "1:00 PM",
     text: "Ketibaan Pengantin",
   },
-  {
-    id: "tentative-04",
-    time: "1:00 PM",
-    text: "Sesi Bergambar (Keluarga)",
-  },
-  {
-    id: "tentative-05",
-    time: "2:00 PM",
-    text: "Sesi Bergambar (Tetamu)",
-  },
+  // {
+  //   id: "tentative-04",
+  //   time: "1:00 PM",
+  //   text: "Sesi Bergambar (Keluarga)",
+  // },
+  // {
+  //   id: "tentative-05",
+  //   time: "2:00 PM",
+  //   text: "Sesi Bergambar (Tetamu)",
+  // },
   {
     id: "tentative-06",
     time: "4:00 PM",
@@ -50,7 +50,7 @@ const Tentative = () => {
         <div className="tentative-time">
           <p>{time}</p>
         </div>
-        <div className="tentative-item">
+        <div className="tentative-item bold">
           <p>{text}</p>
         </div>
       </div>

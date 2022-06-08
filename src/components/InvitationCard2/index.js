@@ -12,7 +12,7 @@ const InvitationCard2 = () => {
 
       <div className="ic2-frame">
         <div className="ic2-frame-img">
-          <img className="ic2-frame1" src={assets.frame1} alt="" />
+          <img className="ic2-frame1" src={assets.frame3} alt="" />
         </div>
 
         <div className="ic2-frame-content">

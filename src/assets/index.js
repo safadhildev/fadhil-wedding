@@ -24,6 +24,7 @@
 export const assets = {
   frame1:
     "https://firebasestorage.googleapis.com/v0/b/fadhil-wedding.appspot.com/o/assets%2Fframe1.png?alt=media&token=f9f6f316-0ad3-4715-aced-08b59edd7934",
+  frame3: require("./frame3.png"),
   strokeGold: require("./stroke-gold.png"),
   appleLogo:
     "https://firebasestorage.googleapis.com/v0/b/fadhil-wedding.appspot.com/o/assets%2Fapple-logo.png?alt=media&token=c01aef77-25b6-43e8-b837-08c8d90a6f90",
@@ -37,6 +38,9 @@ export const assets = {
     "https://firebasestorage.googleapis.com/v0/b/fadhil-wedding.appspot.com/o/assets%2Fmarble-bg.jpeg?alt=media&token=e79322ce-cc42-4dfe-ac6c-8323088dcf06",
   invBg:
     "https://firebasestorage.googleapis.com/v0/b/fadhil-wedding.appspot.com/o/assets%2Finv-bg.jpeg?alt=media&token=8e65cd0a-e907-406a-87d8-192aaafc6a82",
+  geoFrame: require("./geo-frame.png"),
+  bismillah: require("./bismillah.png"),
+  leavesNormal: require("./leaves2-normal.png"),
   song: {
     stillLife:
       "https://firebasestorage.googleapis.com/v0/b/fadhil-wedding.appspot.com/o/assets%2Fbigbang-still-life.mp3?alt=media&token=be9bde07-6a36-45d8-842c-b23f2223fc5b",

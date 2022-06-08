@@ -10,8 +10,7 @@ const gMapLink = "https://goo.gl/maps/tgTSgar5mNq12BUR8";
 const wazeLink =
   "https://ul.waze.com/ul?ll=3.16839024%2C101.71716571&navigate=yes&zoom=17&utm_campaign=default&utm_source=waze_website&utm_medium=lm_share_location";
 
-const address = `Dewan Merak Kayangan
-Bangunan Balai Felda, Kampung Datuk Keramat, 54000 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur`;
+const address = `Dewan Merak Kayangan\nBalai Felda, Jalan Gurney 1, 54000 Kuala Lumpur\nWilayah Persekutuan Kuala Lumpur`;
 
 const Location = ({ visible, onClose }) => {
   const onCloseModal = () => {

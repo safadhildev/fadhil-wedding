@@ -29,24 +29,36 @@ const Introduction = () => {
         />
       </div>
       <div data-aos="fade-zoom-in" data-aos-duration={1000}>
-        <p className="intro-text-normal" style={{ fontSize: "24px" }}>
+        {/* <p className="intro-text-normal" style={{ fontSize: "24px" }}>
           السَّلاَمُ عَلَيْكُمْ وَرَحْمَةُ اللهِ وَبَرَكَاتُهُ
+        </p> */}
+        <div style={{ height: 50 }}>
+          <img
+            alt=""
+            src={assets.bismillah}
+            style={{ width: "100%", height: "100%", objectFit: "contain" }}
+          />
+        </div>
+        <p className="intro-text-small" style={{ margin: "10px 0 0" }}>
+          {`Assalamualaikum W.B.T & Salam Sejahtera\nDengan penuh kesyukuran & hormatnya kami`}
         </p>
         <p
           className="intro-text-big bold"
           style={{ margin: "30px 0 0" }}
         >{`SYED HASSAN BIN SYED ALI\n&\nAKMAL BINTI NAZARUDDIN`}</p>
         <p className="intro-text-small" style={{ margin: "30px 0 0" }}>
-          Dengan segala hormatnya mempersilakan
+          menjemput
         </p>
-        <p className="intro-text-normal bold">
-          Y.B. / Y.BHG. TAN SRI / PUAN SRI / DATUK / DATO’/ DATIN / TUAN / PUAN
-          / SAUDARA / SAUDARI
-        </p>
+        <div style={{ padding: "0 20px" }}>
+          <p className="intro-text-normal bold">
+            Y.B. / Y.BHG. TAN SRI / PUAN SRI / DATUK / DATO’/ DATIN / TUAN /
+            PUAN / SAUDARA / SAUDARI
+          </p>
+        </div>
         <p className="intro-text-small">dan pasangan ke majlis perkahwinan</p>
         <p className="intro-text-small">anakanda kami</p>
-        <p className="intro-text-big bold" style={{ margin: "50px 0 0" }}>
-          {`SYED AHMAD FADHIL BIN SYED HASSAN\n&\nAFIFAH BINTI MUHIDZIR`}
+        <p className="intro-text-big fancy" style={{ margin: "50px 0 0" }}>
+          {`Syed Ahmad Fadhil Bin Syed Hassan\n&\nAfifah Binti Muhidzir`}
         </p>
         <p className="intro-text-small" style={{ margin: "50px 0 0" }}>
           TEMPAT

@@ -7,13 +7,18 @@ import { Header, BackgroundImage } from "../common";
 const contacts = [
   {
     id: 1,
-    name: "Syed Hassan Bin Syed Ali\n(Bapa)",
+    name: "Syed Hassan Syed Ali",
     phone: "+60102283001",
   },
   {
     id: 2,
-    name: "Akmal Binti Nazaruddin\n(Ibu)",
+    name: "Akmal Nazaruddin",
     phone: "+60172105107",
+  },
+  {
+    id: 3,
+    name: "Sharifah Fadzleen Syed Hassan",
+    phone: "+60172824622",
   },
   // {
   //   id: 1,
@@ -28,7 +33,8 @@ const Contact = () => {
   };
 
   const onWhatsapp = (phoneNumber) => {
-    window.open(`https://api.whatsapp.com/send?phone=${phoneNumber}`);
+    // window.open(`https://api.whatsapp.com/send?phone=${phoneNumber}`);
+    window.open(`https://wa.me/${phoneNumber}`);
   };
 
   const renderContact = (item, index) => {
