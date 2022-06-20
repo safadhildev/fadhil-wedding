@@ -10,7 +10,8 @@
 }
 
 .location-header {
-  font-family: "Roboto Slab";
+  /* font-family: "Roboto Slab"; */
+  font-family: "Quicksand", sans-serif;
   font-size: 12px;
   padding: 0;
   margin: 0;
@@ -43,7 +44,8 @@
 }
 
 .location-maps-item {
-  font-family: "Roboto Slab", sans-serif;
+  /* font-family: "Roboto Slab", sans-serif; */
+  font-family: "Quicksand", sans-serif;
   font-size: 14px;
   color: #515151;
 }

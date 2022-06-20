@@ -1,6 +1,7 @@
 .calendar-header p {
   color: #515151;
-  font-family: "Roboto Slab" sans-serif;
+  /* font-family: "Roboto Slab" sans-serif; */
+  font-family: "Quicksand", sans-serif;
   font-size: 14px;
   text-align: center;
   margin: 20px 0;
@@ -39,6 +40,7 @@
   color: #515151;
   margin: 10px 0;
   font-size: 14px;
+  font-family: "Quicksand", sans-serif;
 }
 
 .calendar-img-apple {
