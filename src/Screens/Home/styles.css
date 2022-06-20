@@ -49,7 +49,10 @@
 }
 
 .home-footer-credit {
-  padding-bottom: 100px;
+  padding: 0 10px 0;
+  align-self: center;
+  text-align: center;
+
   /* align-self: flex-end;
   justify-self: flex-end; */
 }

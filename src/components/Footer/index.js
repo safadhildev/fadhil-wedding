@@ -34,6 +34,7 @@ const Footer = ({ onClick, soundOn }) => {
     console.log("[DEBUG] - unmute audio");
     const audioDom = document.getElementById("audio");
     audioDom.play();
+    audioDom.volume = 0.1;
     setMute(false);
   };
 
@@ -69,6 +70,7 @@ const Footer = ({ onClick, soundOn }) => {
         if (mute) {
           audio.play();
           setMute(false);
+          audio.volume = 0.1;
         } else {
           audio.pause();
           setMute(true);
@@ -151,11 +153,12 @@ const Footer = ({ onClick, soundOn }) => {
         playsInline
         autoPlay
         loop
-        hidden
+        // hidden
         controls
         muted={mute}
         preload="auto"
-        onLoad={onUnmuteAudio}
+        // onLoad={onUnmuteAudio}
+        style={{ position: "fixed", zIndex: -100, opacity: 0 }}
       >
         <source src={assets.song.stillLife} type="audio/mpeg" />
       </audio>

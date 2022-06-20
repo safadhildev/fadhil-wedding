@@ -59,7 +59,8 @@ const Home = ({ section, showModal, onCloseModal }) => {
 
           <div tabIndex={4} className="home-footer">
             <div className="home-footer-credit">
-              <p>
+              <p>Design by: safadhildev@gmail.com</p>
+              {/* <p>
                 Icons made by{" "}
                 <a href="https://www.flaticon.com/authors/flat-icons">
                   Flat Icons
@@ -76,7 +77,7 @@ const Home = ({ section, showModal, onCloseModal }) => {
                 <a href="https://www.freepik.com/photos/black-sand">
                   Black sand photo created by Vectorium - www.freepik.com
                 </a>
-              </p>
+              </p> */}
             </div>
           </div>
         </div>

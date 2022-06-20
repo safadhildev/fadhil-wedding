@@ -33,8 +33,9 @@
 .home-section3-contact-item p {
   flex: 1;
   /* font-family: "Satisfy", cursive; */
-  font-family: "Roboto Slab", sans-serif;
+  /* font-family: "Roboto Slab", sans-serif; */
   /* font-weight: bold; */
+  font-family: "Quicksand", sans-serif;
   font-size: 14px;
   white-space: pre-line;
 }
