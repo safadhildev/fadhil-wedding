@@ -6,17 +6,17 @@ import "./styles.css";
 const tentativeData = [
   {
     id: "tentative-01",
-    time: "11:00 AM",
+    time: "11:30 AM",
     text: "Jamuan Makan",
   },
   {
     id: "tentative-02",
     time: "12:30 PM",
-    text: "Ketibaan VIP / VVIP",
+    text: "Ketibaan VIP",
   },
   {
     id: "tentative-03",
-    time: "1:00 PM",
+    time: "12:45 PM",
     text: "Ketibaan Pengantin",
   },
   // {
@@ -64,6 +64,9 @@ const Tentative = () => {
       <div className="tentative-table-wrapper">
         {tentativeData?.map(renderItem)}
       </div>
+      {/* <div className="tentative-sop-wrapper">
+        <p>{`Sentiasa patuhi SOP semasa yang\nditetapkan oleh pihak MKN bagi mengelakkan\npenularan virus Covid-19`}</p>
+      </div> */}
     </div>
   );
 };

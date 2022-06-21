@@ -78,7 +78,7 @@ const Countdown = () => {
       data-aos="zoom-in"
     >
       <BackgroundImage />
-      <Header text="Countdown" />
+      <Header text="Menghitung Hari" />
       {/* <div className="countdown-title-border" /> */}
       {/* <div
         className="countdown-border"

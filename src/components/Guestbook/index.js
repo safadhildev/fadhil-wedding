@@ -117,7 +117,7 @@ const Guestbook = () => {
         data-aos="zoom-in"
       >
         <BackgroundImage />
-        <Header text="Guestbook" />
+        <Header text="Ucapan" />
 
         <div className="guestbook-list-wrapper">
           {data?.length > 0 ? (

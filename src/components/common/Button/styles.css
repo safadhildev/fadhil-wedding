@@ -6,6 +6,7 @@
   /* background-image: linear-gradient(to bottom right, #f0d9a7, #c7ad88); */
   border-radius: 5px;
   padding: 10px 0;
+  height: 20px;
 }
 
 .button-container-disabled {
@@ -15,6 +16,7 @@
   align-items: center;
   border-radius: 5px;
   padding: 10px 0;
+  height: 20px;
 }
 
 .button-container-disabled p {

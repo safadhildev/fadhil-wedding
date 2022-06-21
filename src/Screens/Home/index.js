@@ -44,41 +44,23 @@ const Home = ({ section, showModal, onCloseModal }) => {
           <Countdown />
           <Guestbook />
           <Contact />
-          <Calendar
-            visible={showModal?.visible && showModal?.type === TABS.CALENDAR}
-            onClose={onCloseModal}
-          />
-          <RSVP
-            visible={showModal?.visible && showModal?.type === TABS.RSVP}
-            onClose={onCloseModal}
-          />
-          <Location
-            visible={showModal?.visible && showModal?.type === TABS.LOCATION}
-            onClose={onCloseModal}
-          />
+        </div>
+        <Calendar
+          visible={showModal?.visible && showModal?.type === TABS.CALENDAR}
+          onClose={onCloseModal}
+        />
+        <RSVP
+          visible={showModal?.visible && showModal?.type === TABS.RSVP}
+          onClose={onCloseModal}
+        />
+        <Location
+          visible={showModal?.visible && showModal?.type === TABS.LOCATION}
+          onClose={onCloseModal}
+        />
 
-          <div tabIndex={4} className="home-footer">
-            <div className="home-footer-credit">
-              <p>Design by: safadhildev@gmail.com</p>
-              {/* <p>
-                Icons made by{" "}
-                <a href="https://www.flaticon.com/authors/flat-icons">
-                  Flat Icons
-                </a>{" "}
-                and{" "}
-                <a href="https://www.flaticon.com/authors/freepik">Freepik</a>{" "}
-                from www.flaticon.com
-              </p>
-              <p>
-                rectangular png from{" "}
-                <a href="https://pngtree.com/so/rectangular">pngtree.com/</a>
-              </p>
-              <p>
-                <a href="https://www.freepik.com/photos/black-sand">
-                  Black sand photo created by Vectorium - www.freepik.com
-                </a>
-              </p> */}
-            </div>
+        <div tabIndex={4} className="home-footer">
+          <div className="home-footer-credit">
+            <p>Design by: safadhildev@gmail.com</p>
           </div>
         </div>
       </div>

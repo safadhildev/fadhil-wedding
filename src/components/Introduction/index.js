@@ -46,36 +46,41 @@ const Introduction = () => {
           className="intro-text-big bold"
           style={{ margin: "30px 0 0" }}
         >{`SYED HASSAN BIN SYED ALI\n&\nAKMAL BINTI NAZARUDDIN`}</p>
-        <p className="intro-text-small" style={{ margin: "30px 0 0" }}>
+        <p className="intro-text-small" style={{ margin: "30px 0 5px" }}>
           menjemput
         </p>
         <div style={{ padding: "0 20px" }}>
           <p className="intro-text-normal bold">
             Y.B. / Y.BHG. TAN SRI / PUAN SRI / DATUK / DATO’/ DATIN / TUAN /
-            PUAN / SAUDARA / SAUDARI
+            PUAN
           </p>
         </div>
-        <p className="intro-text-small">dan pasangan ke majlis perkahwinan</p>
-        <p className="intro-text-small">anakanda kami</p>
+        <p className="intro-text-small" style={{ margin: "5px 0 0" }}>
+          dan pasangan ke majlis perkahwinan
+        </p>
+        <p className="intro-text-small">anakanda lelaki kami</p>
         <p className="intro-text-big fancy" style={{ margin: "50px 0 0" }}>
           {`Syed Ahmad Fadhil Bin Syed Hassan\n&\nAfifah Binti Muhidzir`}
         </p>
-        <p className="intro-text-small" style={{ margin: "50px 0 0" }}>
+        <p className="intro-text-small" style={{ margin: "50px 0 5px" }}>
           TEMPAT
         </p>
         <p className="intro-text-normal bold">
-          {`Dewan Merak Kayangan, Balai Felda,\nKuala Lumpur`}
+          {`Dewan Merak Kayangan\nBalai Felda, Jalan Gurney 1\n54000 Kuala Lumpur`}
         </p>
-        <p className="intro-text-small" style={{ margin: "30px 0 0" }}>
+        <p className="intro-text-small" style={{ margin: "30px 0 5px" }}>
           TARIKH
         </p>
         <p className="intro-text-normal bold">
           30 Julai 2022 | 1 Muharram 1444H
         </p>
-        <p className="intro-text-small" style={{ margin: "30px 0 0" }}>
+        <p className="intro-text-small" style={{ margin: "30px 0 5px" }}>
           MASA
         </p>
-        <p className="intro-text-normal bold">11:00 AM - 4:00 PM</p>
+        <p className="intro-text-normal bold">11:30 AM - 4:00 PM</p>
+        <div className="invitation-sop-wrapper">
+          <p>{`Sentiasa patuhi SOP semasa yang\nditetapkan oleh pihak MKN bagi mengelakkan\npenularan virus Covid-19`}</p>
+        </div>
       </div>
     </div>
   );

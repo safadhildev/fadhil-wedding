@@ -8,7 +8,7 @@ import { assets } from "../../assets";
 const event = {
   title: "Walimatul Urus Fadhil & Fify",
   description: "Fadhil & Fify | Walimatul Urus",
-  startTime: "2022-07-30T11:00:00+08:00",
+  startTime: "2022-07-30T11:30:00+08:00",
   endTime: "2022-07-30T16:00:00+08:00",
   location:
     "Dewan Merak Kayangan, Bangunan Balai Felda, Kampung Datuk Keramat, 54000 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur",
@@ -21,7 +21,7 @@ const Calendar = ({ visible, onClose }) => {
 
   const onSaveToGoogleCalendar = () => {
     const link =
-      "https://calendar.google.com/calendar/r/eventedit?text=Walimatul Urus Fadhil & Fify&dates=20220730T110000/20220730T160000&location=Dewan Merak Kayangan, Bangunan Balai Felda, Kampung Datuk Keramat, 54000 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur&sf=true&output=xml";
+      "https://calendar.google.com/calendar/r/eventedit?text=Walimatul Urus Fadhil & Fify&dates=20220730T113000/20220730T160000&location=Dewan Merak Kayangan, Bangunan Balai Felda, Kampung Datuk Keramat, 54000 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur&sf=true&output=xml";
 
     window.open(link);
   };
@@ -29,7 +29,7 @@ const Calendar = ({ visible, onClose }) => {
   return (
     <Modal visible={visible} title="Calendar" onClose={onCloseModal}>
       <div className="calendar-header">
-        <p>30 Julai 2022 | 11AM - 4PM</p>
+        <p>30 Julai 2022 | 11:30 AM - 4:00 PM</p>
       </div>
       <div className="calendar-container">
         <div className="calendar-img-wrapper">

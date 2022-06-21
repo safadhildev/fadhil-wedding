@@ -1,13 +1,14 @@
 /* SECTION 3 - CONTACT */
 .home-section3 {
   display: flex;
+  background-color: #128c7e;
   flex-direction: column;
   justify-content: flex-start;
   max-height: 100vh;
   position: relative;
   background-color: #ffffff;
   color: #000;
-  padding: 50px 20px 150px;
+  padding: 50px 20px 50px;
   overflow: hidden;
   border-top: 1px solid rgba(217, 172, 83, 0.5);
 }
@@ -20,6 +21,7 @@
 }
 
 .home-section3-contact-wrapper {
+  flex: 1;
   margin: 20px 0 0;
 }
 
@@ -64,4 +66,15 @@
   background-color: #d9ac53;
   width: 130px;
   align-self: center;
+}
+
+.home-section3-closure-wrapper {
+  margin: 50px 0 0;
+}
+
+.home-section3-closure-wrapper p {
+  text-align: center;
+  font-size: 14px;
+  font-family: "Quicksand", sans-serif;
+  white-space: pre-line;
 }

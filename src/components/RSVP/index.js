@@ -139,12 +139,13 @@ const RSVP = ({ visible, onClose }) => {
 
   return (
     <Modal visible={visible} title="RSVP" onClose={onCloseModal}>
-      <div style={{ padding: "10px 20px" }}>
+      <div style={{ padding: "10px 20px 0" }}>
         <TextField
           label="Nama"
           required
           variant="outlined"
           fullWidth
+          size="small"
           value={formValues?.name}
           error={isValid?.name !== null && !isValid?.name}
           helperText={
@@ -153,7 +154,7 @@ const RSVP = ({ visible, onClose }) => {
               : null
           }
           style={{
-            margin: "10px 0",
+            margin: "5px 0",
             // backgroundColor: "#EEEEEE",
             borderRadius: 5,
             fontFamily: `Roboto Slab, sans-serif`,
@@ -174,10 +175,11 @@ const RSVP = ({ visible, onClose }) => {
           }
           variant="outlined"
           fullWidth
+          size="small"
           color="primary"
           value={formValues?.mobile}
           style={{
-            margin: "10px 0",
+            margin: "5px 0",
             // backgroundColor: "#EEEEEE",
             borderRadius: 5,
             fontFamily: `Roboto Slab, sans-serif`,
@@ -203,6 +205,7 @@ const RSVP = ({ visible, onClose }) => {
               placeholder="Please Select"
               select
               fullWidth
+              size="small"
               variant="outlined"
               style={{
                 margin: "10px 0",
@@ -247,6 +250,7 @@ const RSVP = ({ visible, onClose }) => {
                 placeholder="Please Select"
                 select
                 fullWidth
+                size="small"
                 variant="outlined"
                 style={{
                   margin: "10px 0",
@@ -270,7 +274,11 @@ const RSVP = ({ visible, onClose }) => {
             </div>
           </div>
         )}
-        <div style={{ margin: "30px 0 0" }}>
+        <div
+          style={{
+            margin: "20px 0 0",
+          }}
+        >
           <Button
             text="Hantar"
             onClick={onConfirm}

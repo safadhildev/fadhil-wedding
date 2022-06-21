@@ -89,6 +89,13 @@ const Contact = () => {
       <div className="home-section3-contact-wrapper">
         {contacts.map(renderContact)}
       </div>
+      <div className="home-section3-closure-wrapper">
+        <p>
+          {
+            "Semoga dengan kehadiran dan doa restu daripada anda akan menyerikan lagi majlis ini.\n\nTerima kasih"
+          }
+        </p>
+      </div>
     </div>
   );
 };
