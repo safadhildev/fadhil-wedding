@@ -14,39 +14,38 @@ const Modal = ({
   children = null,
 }) => {
   return (
-    <>
-      <div className={`Modal ${visible ? "Show" : ""}`}>
+    <MuiModal open={visible} onClose={onClose}>
+      <div className="modal-container">
+        <div
+          style={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            zIndex: 0,
+            opacity: 0.5,
+          }}
+        >
+          <img
+            alt=""
+            src={assets.marbleBg}
+            style={{ width: "100%", height: "100%", objectFit: "cover" }}
+          />
+        </div>
         <div className="modal-wrapper">
-          <div
-            style={{
-              position: "absolute",
-              top: 0,
-              left: 0,
-              right: 0,
-              bottom: 0,
-              zIndex: 0,
-              opacity: 0.5,
-            }}
-          >
-            <img
-              alt=""
-              src={assets.marbleBg}
-              style={{ width: "100%", height: "100%", objectFit: "cover" }}
-            />
-          </div>
-          <div style={{ position: "relative" }}>
+          <div style={{}}>
             <div className="modal-title-wrapper">
               <p className="modal-title">{title}</p>
               <div className="modal-close-wrapper" onClick={onClose}>
                 <Cancel color="secondary" fontSize="medium" />
               </div>
             </div>
-            <div style={{ flex: 1 }}>{children}</div>
+            <div style={{ position: "relative" }}>{children}</div>
           </div>
         </div>
       </div>
-      <div className={`Overlay ${visible ? "Show" : ""}`} onClick={onClose} />
-    </>
+    </MuiModal>
   );
 };
 

@@ -65,6 +65,10 @@ const App = () => {
                 section={activeTab}
                 showModal={showModal}
                 onCloseModal={onCloseModal}
+                onOpenRSVP={() => {
+                  console.log("[DEBUG] :: OPEN RSVPPPP");
+                  setShowModal({ type: TABS.RSVP, visible: true });
+                }}
               />
             }
           />

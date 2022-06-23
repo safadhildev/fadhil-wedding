@@ -113,7 +113,7 @@ const Footer = ({ onClick, soundOn }) => {
           <p>Calendar</p>
         </div>
         <div className="footer-divider" />
-        <div
+        {/* <div
           className={getIconButtonClassName(TABS.RSVP)}
           onClick={() => {
             onClickIcon(TABS.RSVP);
@@ -122,7 +122,7 @@ const Footer = ({ onClick, soundOn }) => {
           <HistoryEduOutlined fontSize="medium" />
           <p>RSVP</p>
         </div>
-        <div className="footer-divider" />
+        <div className="footer-divider" /> */}
         <div
           className={getIconButtonClassName(TABS.LOCATION)}
           onClick={() => {

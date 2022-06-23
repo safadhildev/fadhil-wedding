@@ -1,44 +1,20 @@
-.Modal {
-  display: flex;
-  position: fixed;
+.modal-container {
+  position: absolute;
+  bottom: 0;
   left: 0;
   right: 0;
-  bottom: -150vh;
-  transition: all 0.3s ease-out;
-  z-index: 999;
-  justify-content: center;
-  align-items: center;
-  flex: 1;
+  max-height: 80%;
 }
 
 .modal-wrapper {
-  flex: 1;
   max-width: 500px;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   background-color: #ffffff;
   box-shadow: 0 0 4px 0px rgba(0, 0, 0, 0.15);
-  padding: 0 0 40px;
-  position: relative;
-}
-
-.Modal.Show {
-  bottom: 0;
-}
-
-.Overlay {
-  background-color: rgba(0, 0, 0, 0.55);
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  position: fixed;
-  display: none;
-  z-index: 5;
-}
-
-.Overlay.Show {
-  display: block;
+  padding: 60px 0 40px;
+  z-index: 1;
+  /* background-image: url("https://firebasestorage.googleapis.com/v0/b/fadhil-wedding.appspot.com/o/assets%2Fmarble-bg.jpeg?alt=media&token=e79322ce-cc42-4dfe-ac6c-8323088dcf06"); */
 }
 
 .modal-close-wrapper {
@@ -50,17 +26,19 @@
 }
 
 .modal-title-wrapper {
-  padding: 10px 20px 0;
+  padding: 0px 20px 0;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  position: relative;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
 }
 
 .modal-title {
   font-weight: bold;
-  /* font-family: "Satisfy", cursive; */
-  /* font-family: "Roboto Slab", sans-serif; */
   font-family: "Quicksand", sans-serif;
   font-size: 18px;
   /* text-align: center; */

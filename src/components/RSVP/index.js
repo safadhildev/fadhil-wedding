@@ -138,94 +138,78 @@ const RSVP = ({ visible, onClose }) => {
   };
 
   return (
-    <Modal visible={visible} title="RSVP" onClose={onCloseModal}>
-      <div style={{ padding: "10px 20px 0" }}>
-        <TextField
-          label="Nama"
-          required
-          variant="outlined"
-          fullWidth
-          size="small"
-          value={formValues?.name}
-          error={isValid?.name !== null && !isValid?.name}
-          helperText={
-            isValid?.name !== null && !isValid?.name
-              ? "Name cannot be blank"
-              : null
-          }
-          style={{
-            margin: "5px 0",
-            // backgroundColor: "#EEEEEE",
-            borderRadius: 5,
-            fontFamily: `Roboto Slab, sans-serif`,
-          }}
-          onChange={(event) => {
-            validateName(event.target.value);
-            setFormValues({ ...formValues, name: event.target.value });
-          }}
-        />
-        <TextField
-          required
-          error={isValid?.mobile !== null && !isValid?.mobile}
-          label="No. Telefon"
-          helperText={
-            isValid?.mobile !== null && !isValid?.mobile
-              ? "Please fill in a valid mobile number"
-              : null
-          }
-          variant="outlined"
-          fullWidth
-          size="small"
-          color="primary"
-          value={formValues?.mobile}
-          style={{
-            margin: "5px 0",
-            // backgroundColor: "#EEEEEE",
-            borderRadius: 5,
-            fontFamily: `Roboto Slab, sans-serif`,
-          }}
-          onChange={(event) => {
-            validateMobile(event.target.value);
-            setFormValues({ ...formValues, mobile: event.target.value });
-          }}
-        />
+    <Modal
+      visible={visible}
+      title="RSVP"
+      onClose={onCloseModal}
+      modalHeight="60%"
+    >
+      <div
+        style={{
+          padding: "10px 20px 0",
+          // height: "400px",
+          display: "flex",
+          flex: 1,
+          flexDirection: "column",
+        }}
+      >
         <div
           style={{
             display: "flex",
-            flexDirection: "row",
-            justifyContent: "space-between",
-            alignItems: "center",
+            flexDirection: "column",
+            flexGrow: 1,
+            // backgroundColor: "#000",
           }}
         >
-          <div style={{ flex: 1 }}>
-            <p className="rsvp-text">Kehadiran</p>
-          </div>
-          <div style={{ flex: 1 }}>
-            <TextField
-              placeholder="Please Select"
-              select
-              fullWidth
-              size="small"
-              variant="outlined"
-              style={{
-                margin: "10px 0",
-                backgroundColor: "#EEEEEE",
-                borderRadius: 5,
-              }}
-              value={formValues?.attend}
-              onChange={(event) => {
-                setFormValues({ ...formValues, attend: event.target.value });
-              }}
-            >
-              {attendList.map((option) => (
-                <MenuItem key={option.value} value={option.value}>
-                  {option.label}
-                </MenuItem>
-              ))}
-            </TextField>
-          </div>
-        </div>
-        {formValues?.attend && (
+          <TextField
+            label="Nama"
+            required
+            variant="outlined"
+            fullWidth
+            size="small"
+            value={formValues?.name}
+            error={isValid?.name !== null && !isValid?.name}
+            helperText={
+              isValid?.name !== null && !isValid?.name
+                ? "Name cannot be blank"
+                : null
+            }
+            style={{
+              margin: "5px 0",
+              // backgroundColor: "#EEEEEE",
+              borderRadius: 5,
+              fontFamily: `Roboto Slab, sans-serif`,
+            }}
+            onChange={(event) => {
+              validateName(event.target.value);
+              setFormValues({ ...formValues, name: event.target.value });
+            }}
+          />
+          <TextField
+            required
+            error={isValid?.mobile !== null && !isValid?.mobile}
+            label="No. Telefon"
+            helperText={
+              isValid?.mobile !== null && !isValid?.mobile
+                ? "Please fill in a valid mobile number"
+                : null
+            }
+            variant="outlined"
+            fullWidth
+            size="small"
+            color="primary"
+            value={formValues?.mobile}
+            style={{
+              margin: "5px 0",
+              // backgroundColor: "#EEEEEE",
+              borderRadius: 5,
+              fontFamily: `Roboto Slab, sans-serif`,
+            }}
+            onChange={(event) => {
+              validateMobile(event.target.value);
+              setFormValues({ ...formValues, mobile: event.target.value });
+            }}
+          />
           <div
             style={{
               display: "flex",
@@ -234,18 +218,10 @@ const RSVP = ({ visible, onClose }) => {
               alignItems: "center",
             }}
           >
-            <div style={{ display: "flex", flex: 1 }}>
-              <p className="rsvp-text">Jumlah Bilangan</p>
+            <div style={{ flex: 1 }}>
+              <p className="rsvp-text">Kehadiran</p>
             </div>
-            <div
-              style={{
-                display: "flex",
-                flex: 1,
-                flexDirection: "row",
-                alignItems: "center",
-                justifyContent: "flex-end",
-              }}
-            >
+            <div style={{ flex: 1 }}>
               <TextField
                 placeholder="Please Select"
                 select
@@ -257,15 +233,12 @@ const RSVP = ({ visible, onClose }) => {
                   backgroundColor: "#EEEEEE",
                   borderRadius: 5,
                 }}
-                value={formValues?.head_count}
+                value={formValues?.attend}
                 onChange={(event) => {
-                  setFormValues({
-                    ...formValues,
-                    head_count: event.target.value,
-                  });
+                  setFormValues({ ...formValues, attend: event.target.value });
                 }}
               >
-                {headCountList.map((option) => (
+                {attendList.map((option) => (
                   <MenuItem key={option.value} value={option.value}>
                     {option.label}
                   </MenuItem>
@@ -273,7 +246,56 @@ const RSVP = ({ visible, onClose }) => {
               </TextField>
             </div>
           </div>
-        )}
+          {formValues?.attend && (
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "row",
+                justifyContent: "space-between",
+                alignItems: "center",
+              }}
+            >
+              <div style={{ display: "flex", flex: 1 }}>
+                <p className="rsvp-text">Jumlah Bilangan</p>
+              </div>
+              <div
+                style={{
+                  display: "flex",
+                  flex: 1,
+                  flexDirection: "row",
+                  alignItems: "center",
+                  justifyContent: "flex-end",
+                }}
+              >
+                <TextField
+                  placeholder="Please Select"
+                  select
+                  fullWidth
+                  size="small"
+                  variant="outlined"
+                  style={{
+                    margin: "10px 0",
+                    backgroundColor: "#EEEEEE",
+                    borderRadius: 5,
+                  }}
+                  value={formValues?.head_count}
+                  onChange={(event) => {
+                    setFormValues({
+                      ...formValues,
+                      head_count: event.target.value,
+                    });
+                  }}
+                >
+                  {headCountList.map((option) => (
+                    <MenuItem key={option.value} value={option.value}>
+                      {option.label}
+                    </MenuItem>
+                  ))}
+                </TextField>
+              </div>
+            </div>
+          )}
+        </div>
         <div
           style={{
             margin: "20px 0 0",

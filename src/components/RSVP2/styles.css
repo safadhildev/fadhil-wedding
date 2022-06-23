@@ -1,0 +1,16 @@
+.rsvp-text {
+  font-size: 16px;
+  color: #000000;
+
+  /* font-family: "Satisfy", cursive; */
+  /* font-family: "Roboto Slab", sans-serif; */
+  font-family: "Quicksand", sans-serif;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.MuiTextField-root {
+  /* background-color: aqua; */
+}

@@ -14,12 +14,13 @@ import {
   Calendar,
   Location,
   SplashScreen,
+  RSVP2,
 } from "../../components";
 import { assets } from "../../assets";
 import Guestbook from "../../components/Guestbook";
 import InvitationCard2 from "../../components/InvitationCard2";
 
-const Home = ({ section, showModal, onCloseModal }) => {
+const Home = ({ section, showModal, onCloseModal, onOpenRSVP }) => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -39,7 +40,7 @@ const Home = ({ section, showModal, onCloseModal }) => {
       <div className={`home-body ${loading ? "home-hidden" : "home-shown"}`}>
         <div className="home-container">
           <InvitationCard2 />
-          <Introduction />
+          <Introduction onOpenRSVP={onOpenRSVP} />
           <Tentative />
           <Countdown />
           <Guestbook />
@@ -52,7 +53,12 @@ const Home = ({ section, showModal, onCloseModal }) => {
         <RSVP
           visible={showModal?.visible && showModal?.type === TABS.RSVP}
           onClose={onCloseModal}
+          modalHeight="300px"
         />
+        {/* <RSVP
+          visible={showModal?.visible && showModal?.type === TABS.RSVP}
+          onClose={onCloseModal}
+        /> */}
         <Location
           visible={showModal?.visible && showModal?.type === TABS.LOCATION}
           onClose={onCloseModal}

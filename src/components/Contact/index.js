@@ -92,7 +92,7 @@ const Contact = () => {
       <div className="home-section3-closure-wrapper">
         <p>
           {
-            "Semoga dengan kehadiran dan doa restu daripada anda akan menyerikan lagi majlis ini.\n\nTerima kasih"
+            "Semoga dengan kehadiran serta iringan doa\nY.B. / Y.Bhg. Tan Sri / Puan Sri / Datuk / Dato’/ Datin / Tuan / Puan pastinya akan memeriahkan lagi majlis ini dan diberkati Allah S.W.T.\n\nTerima kasih"
           }
         </p>
       </div>
