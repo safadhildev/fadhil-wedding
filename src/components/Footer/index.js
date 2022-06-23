@@ -160,7 +160,7 @@ const Footer = ({ onClick, soundOn }) => {
         // onLoad={onUnmuteAudio}
         style={{ position: "fixed", zIndex: -100, opacity: 0 }}
       >
-        <source src={assets.song.stillLife} type="audio/mpeg" />
+        <source src={assets.song.bgMusic} type="audio/mpeg" />
       </audio>
     </>
   );

@@ -34,7 +34,8 @@ export const assets = {
   bismillah: require("./bismillah.png"),
   leavesNormal: require("./leaves2-normal.png"),
   song: {
-    stillLife: require("../assets/bigbang-still-life.mp3"),
+    bgMusic:
+      "https://firebasestorage.googleapis.com/v0/b/fadhil-wedding.appspot.com/o/assets%2Fbigbang-still-life.mp3?alt=media&token=be9bde07-6a36-45d8-842c-b23f2223fc5b",
   },
 };
 
