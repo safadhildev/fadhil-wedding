@@ -16,22 +16,24 @@ const assetArray = [
 
 const SplashScreen = ({ visible, onFinish }) => {
   const splashRef = useRef(null);
-  const cacheImages = async () => {
-    const promises = await assetArray.map((src) => {
-      return new Promise((resolve, reject) => {
-        const img = new Image();
-        img.src = src;
-        img.onload = resolve();
-        img.onerror = reject();
-      });
-    });
-    await Promise.all(promises);
-    setTimeout(() => {
-      onFinish();
-    }, 2000);
-  };
 
   useEffect(() => {
+    const cacheImages = async () => {
+      const promises = await assetArray.map((src) => {
+        return new Promise((resolve, reject) => {
+          const img = new Image();
+          img.src = src;
+          img.onload = resolve();
+          img.onerror = reject();
+        });
+      });
+      await Promise.all(promises);
+
+      setTimeout(() => {
+        onFinish();
+      }, 2000);
+    };
+
     cacheImages();
   }, []);
   return (

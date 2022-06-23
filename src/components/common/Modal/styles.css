@@ -1,15 +1,24 @@
+/* .MuiModal-root {
+  outline: none;
+} */
+
 .modal-container {
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
   max-height: 80%;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  background-color: #ffffff;
+  overflow: hidden;
+  outline: none;
 }
 
 .modal-wrapper {
   max-width: 500px;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
+  /* border-top-left-radius: 5px;
+  border-top-right-radius: 5px; */
   background-color: #ffffff;
   box-shadow: 0 0 4px 0px rgba(0, 0, 0, 0.15);
   padding: 60px 0 40px;
