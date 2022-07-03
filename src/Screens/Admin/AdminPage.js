@@ -155,7 +155,7 @@ const AdminPage = ({ role }) => {
           style={{
             backgroundColor: "#EEE",
             padding: "10px 20px",
-            width: "300px",
+            width: "95vw",
           }}
         />
         <div style={{ padding: "30px 0" }}>
