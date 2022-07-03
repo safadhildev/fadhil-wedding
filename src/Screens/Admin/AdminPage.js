@@ -33,13 +33,24 @@ const AdminPage = ({ role }) => {
   const [data, setData] = useState(null);
   const [filteredData, setFilteredData] = useState([]);
 
+  const manageData = (snapshot) => {
+    const sortedBySubmissionDate = snapshot?.sort(
+      (a, b) => new Date(a.date) - new Date(b.date)
+    );
+    setData(sortedBySubmissionDate);
+  };
+
   const getData = (queryCollection) => {
     onSnapshot(queryCollection, (querySnapshot) => {
       const rsvp = [];
       querySnapshot.forEach((doc) => {
-        rsvp.push(doc.data());
+        console.log("[DEBUG] :: ", { doc });
+        rsvp.push({
+          id: doc.id,
+          ...doc.data(),
+        });
       });
-      setData(rsvp);
+      manageData(rsvp);
     });
   };
 
@@ -76,6 +87,9 @@ const AdminPage = ({ role }) => {
     >
       <TableCell component="th" scope="row">
         {index + 1}
+      </TableCell>
+      <TableCell component="th" scope="row">
+        {item.id}
       </TableCell>
       <TableCell component="th" scope="row">
         {item.name}
@@ -154,6 +168,7 @@ const AdminPage = ({ role }) => {
               <TableHead>
                 <TableRow>
                   <TableCell></TableCell>
+                  <TableCell>ID</TableCell>
                   <TableCell>Name</TableCell>
                   <TableCell align="right">Attend</TableCell>
                   <TableCell align="right">Total Attendees</TableCell>
