@@ -1,6 +1,6 @@
 import "./App.css";
 import { Route, Routes } from "react-router";
-import Home from "./Screens/Home";
+import { Home, Admin } from "./Screens";
 import Footer from "./components/Footer";
 import { useEffect, useRef, useState } from "react";
 import AOS from "aos";
@@ -61,19 +61,22 @@ const App = () => {
           <Route
             path="/"
             element={
-              <Home
-                section={activeTab}
-                showModal={showModal}
-                onCloseModal={onCloseModal}
-                onOpenRSVP={() => {
-                  console.log("[DEBUG] :: OPEN RSVPPPP");
-                  setShowModal({ type: TABS.RSVP, visible: true });
-                }}
-              />
+              <>
+                <Home
+                  section={activeTab}
+                  showModal={showModal}
+                  onCloseModal={onCloseModal}
+                  onOpenRSVP={() => {
+                    console.log("[DEBUG] :: OPEN RSVPPPP");
+                    setShowModal({ type: TABS.RSVP, visible: true });
+                  }}
+                />
+                <Footer onClick={onClickTab} />
+              </>
             }
           />
+          <Route path="/admin" exact element={<Admin />} />
         </Routes>
-        <Footer onClick={onClickTab} />
       </ThemeProvider>
       {/* <audio
         ref={audioRef}

@@ -111,9 +111,11 @@ const RSVP = ({ visible, onClose }) => {
       valid: isLengthEnough && isNumber,
     });
 
+    const isNumValid = val?.length > 0;
+
     setIsValid({
       ...isValid,
-      mobile: isLengthEnough && isNumber,
+      mobile: isNumValid,
     });
   };
 
@@ -188,7 +190,7 @@ const RSVP = ({ visible, onClose }) => {
           <TextField
             required
             error={isValid?.mobile !== null && !isValid?.mobile}
-            label="No. Telefon"
+            label="No. Telefon (eg. 0123456789)"
             helperText={
               isValid?.mobile !== null && !isValid?.mobile
                 ? "Please fill in a valid mobile number"
