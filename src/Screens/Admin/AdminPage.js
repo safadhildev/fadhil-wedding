@@ -6,6 +6,8 @@ import {
   TableHead,
   TableRow,
   TableBody,
+  Checkbox,
+  Box,
 } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import {
@@ -17,6 +19,7 @@ import {
   where,
 } from "firebase/firestore";
 import { isEmpty } from "lodash";
+import { DataGrid } from "@mui/x-data-grid";
 
 import { Button } from "../../components/common";
 import AdminLogin from "./AdminLogin";
@@ -28,10 +31,28 @@ import { app } from "../../firebase";
 
 const db = getFirestore(app);
 
+const columns = [
+  { field: "id", headerName: "ID", width: 70 },
+  { field: "name", headerName: "Name", width: 130 },
+  { field: "attend", headerName: "Attend", width: 70 },
+  {
+    field: "head_count",
+    headerName: "Total Attendees",
+    type: "number",
+    width: 70,
+  },
+  {
+    field: "mobile",
+    headerName: "Phone Number",
+    width: 100,
+  },
+];
+
 const AdminPage = ({ role }) => {
   const [searchValue, setSearchValue] = useState("");
-  const [data, setData] = useState(null);
+  const [data, setData] = useState([]);
   const [filteredData, setFilteredData] = useState([]);
+  const [checked, setChecked] = useState([]);
 
   const manageData = (snapshot) => {
     const sortedBySubmissionDate = snapshot?.sort(
@@ -68,6 +89,15 @@ const AdminPage = ({ role }) => {
     }
   };
 
+  const onSelectAllClick = () => {
+    const mappedIds = data?.map((item) => item?.id);
+    if (checked?.length === mappedIds?.length) {
+      setChecked([]);
+    } else {
+      setChecked(mappedIds);
+    }
+  };
+
   useEffect(() => {
     // const q = query(collection(db, "cities"), where("state", "==", "CA"));
     const queryCollection = query(collection(db, "rsvp"));
@@ -80,33 +110,14 @@ const AdminPage = ({ role }) => {
     window.open(`tel:${phoneNumber}`);
   };
 
-  const renderItem = (item, index) => (
-    <TableRow
-      key={item.name}
-      sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
-    >
-      <TableCell component="th" scope="row">
-        {index + 1}
-      </TableCell>
-      <TableCell component="th" scope="row">
-        {item.id}
-      </TableCell>
-      <TableCell component="th" scope="row">
-        {item.name}
-      </TableCell>
-      <TableCell align="right">{item?.attend ? "Yes" : "No"}</TableCell>
-      <TableCell align="right">{item?.head_count}</TableCell>
-      <TableCell
-        align="right"
-        style={{ color: "blue" }}
-        onClick={() => {
-          onPressMobile(item?.mobile);
-        }}
-      >
-        {item?.mobile}
-      </TableCell>
-    </TableRow>
-  );
+  const onCheckItem = (itemId) => {
+    const isChecked = checked?.some((checkedItem) => checkedItem === itemId);
+    if (isChecked) {
+      setChecked((prev) => prev.filter((item) => item !== itemId));
+    } else {
+      setChecked([...checked, itemId]);
+    }
+  };
 
   const getValueByType = (key) => {
     switch (key) {
@@ -115,15 +126,70 @@ const AdminPage = ({ role }) => {
         total = data?.length;
         return total;
       }
+      case "total_checked": {
+        let total = 0;
+        total = checked?.length;
+        return total;
+      }
       case "head_count": {
         let total = 0;
         const mapped = data?.map((item) => item[key]);
         total = mapped?.reduce((partialSum, a) => partialSum + a, 0);
         return total;
       }
+      case "head_count_checked": {
+        let total = 0;
+        const filteredData = data?.filter((item) =>
+          checked?.some((checkedItem) => checkedItem === item?.id)
+        );
+
+        console.log("[DEBUG] :: data :: ", { filteredData });
+        const mapped = filteredData?.map((item) => item?.head_count);
+        total = mapped?.reduce((partialSum, a) => partialSum + a, 0);
+        return total;
+      }
       default:
         return 0;
     }
+  };
+
+  const renderItem = (item, index) => {
+    const isChecked = checked?.some((checkedItem) => checkedItem === item?.id);
+    return (
+      <TableRow
+        key={item.name}
+        sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
+      >
+        <TableCell padding="checkbox">
+          <Checkbox
+            color="primary"
+            checked={isChecked}
+            onClick={() => {
+              onCheckItem(item?.id);
+            }}
+          />
+        </TableCell>
+        {/* <TableCell component="th" scope="row">
+          {index + 1}
+        </TableCell> */}
+
+        <TableCell component="th" scope="row">
+          {item.name}
+        </TableCell>
+        <TableCell align="right">{item?.attend ? "Yes" : "No"}</TableCell>
+        <TableCell align="right">{item?.head_count}</TableCell>
+        <TableCell
+          align="right"
+          style={{ color: "blue" }}
+          onClick={() => {
+            onPressMobile(item?.mobile);
+          }}
+        >
+          {item?.mobile}
+        </TableCell>
+        <TableCell>{item.id}</TableCell>
+      </TableRow>
+    );
   };
 
   return (
@@ -158,7 +224,51 @@ const AdminPage = ({ role }) => {
             width: "95vw",
           }}
         />
-        <div style={{ padding: "30px 0" }}>
+        {checked?.length > 0 && (
+          <div className="admin-page-stat-checked-container">
+            <h4>Selected</h4>
+            <div
+              className="admin-page-stat-wrapper"
+              style={{ margin: "10px 0 0 0" }}
+            >
+              <div className="admin-page-stat-card">
+                <div>
+                  <p className="admin-page-stat-card-label">
+                    Total Respondents
+                  </p>
+                  <p className="admin-page-stat-card-value">
+                    {isEmpty(data) ? 0 : getValueByType("total_checked")}
+                  </p>
+                </div>
+              </div>
+              <div className="admin-page-stat-card">
+                <div>
+                  <p className="admin-page-stat-card-label">
+                    Total Head Counts
+                  </p>
+                  <p className="admin-page-stat-card-value">
+                    {isEmpty(data) ? 0 : getValueByType("head_count_checked")}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+        <div
+          style={{
+            padding: "10px 0",
+            display: "flex",
+            flex: 1,
+          }}
+        >
+          {/* <DataGrid
+            rows={data}
+            columns={columns}
+            // pageSize={5}
+            // rowsPerPageOptions={[5]}
+            checkboxSelection
+          /> */}
+
           <TableContainer>
             <Table
               sx={{ minWidth: 750 }}
@@ -167,12 +277,26 @@ const AdminPage = ({ role }) => {
             >
               <TableHead>
                 <TableRow>
-                  <TableCell></TableCell>
-                  <TableCell>ID</TableCell>
+                  <TableCell padding="checkbox">
+                    <Checkbox
+                      color="primary"
+                      //   indeterminate={numSelected > 0 && numSelected < rowCount}
+                      checked={
+                        checked?.length > 0 && checked?.length === data?.length
+                      }
+                      onChange={onSelectAllClick}
+                      inputProps={{
+                        "aria-label": "select all desserts",
+                      }}
+                    />
+                  </TableCell>
+                  {/* <TableCell></TableCell> */}
+
                   <TableCell>Name</TableCell>
                   <TableCell align="right">Attend</TableCell>
                   <TableCell align="right">Total Attendees</TableCell>
                   <TableCell align="right">Phone Number</TableCell>
+                  <TableCell>ID</TableCell>
                 </TableRow>
               </TableHead>
               <TableBody>
