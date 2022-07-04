@@ -157,6 +157,7 @@ const AdminPage = ({ role }) => {
     const isChecked = checked?.some((checkedItem) => checkedItem === item?.id);
     return (
       <TableRow
+        style={{ backgroundColor: isChecked ? "#ECEFF1" : "#FFF" }}
         key={item.name}
         sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
       >
@@ -224,36 +225,32 @@ const AdminPage = ({ role }) => {
             width: "95vw",
           }}
         />
-        {checked?.length > 0 && (
-          <div className="admin-page-stat-checked-container">
-            <h4>Selected</h4>
-            <div
-              className="admin-page-stat-wrapper"
-              style={{ margin: "10px 0 0 0" }}
-            >
-              <div className="admin-page-stat-card">
-                <div>
-                  <p className="admin-page-stat-card-label">
-                    Total Respondents
-                  </p>
-                  <p className="admin-page-stat-card-value">
-                    {isEmpty(data) ? 0 : getValueByType("total_checked")}
-                  </p>
-                </div>
+
+        <div className="admin-page-stat-checked-container">
+          <h4>Selected</h4>
+          <div
+            className="admin-page-stat-wrapper"
+            style={{ margin: "10px 0 0 0" }}
+          >
+            <div className="admin-page-stat-card">
+              <div>
+                <p className="admin-page-stat-card-label">Total Respondents</p>
+                <p className="admin-page-stat-card-value">
+                  {isEmpty(data) ? 0 : getValueByType("total_checked")}
+                </p>
               </div>
-              <div className="admin-page-stat-card">
-                <div>
-                  <p className="admin-page-stat-card-label">
-                    Total Head Counts
-                  </p>
-                  <p className="admin-page-stat-card-value">
-                    {isEmpty(data) ? 0 : getValueByType("head_count_checked")}
-                  </p>
-                </div>
+            </div>
+            <div className="admin-page-stat-card">
+              <div>
+                <p className="admin-page-stat-card-label">Total Head Counts</p>
+                <p className="admin-page-stat-card-value">
+                  {isEmpty(data) ? 0 : getValueByType("head_count_checked")}
+                </p>
               </div>
             </div>
           </div>
-        )}
+        </div>
+
         <div
           style={{
             padding: "10px 0",
