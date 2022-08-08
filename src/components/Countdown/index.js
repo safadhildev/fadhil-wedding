@@ -21,9 +21,9 @@ const Countdown = () => {
     );
 
     const day =
-      Math.floor(duration.asDays()) < 10
-        ? `0$Math.floor(duration.asDays());`
-        : Math.floor(duration.asDays());
+      Math.floor(duration?.asDays()) < 10
+        ? `0${Math.floor(duration.asDays())}`
+        : Math.floor(duration?.asDays());
     const hour =
       duration.get("hours") < 10
         ? `0${duration.get("hours")}`
